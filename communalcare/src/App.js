@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import MutualAid from './pages/MutualAid/MutualAid'
-import OfferPage from './pages/OffersPage/OfferPage'
+import OffersPage from './pages/OffersPage/OffersPage'
 import RequestPage from './pages/RequestsPage/RequestsPage'
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/login" element={ <Login />} />
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
-          <Route path="/offers" element={ <OfferPage />} />
+          <Route path="/offers" element={ <OffersPage />} />
           <Route path="/requests" element={ <RequestPage />} />
         </Routes>
       </main>
