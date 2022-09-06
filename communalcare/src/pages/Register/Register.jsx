@@ -1,72 +1,105 @@
-import React, {useState} from 'react'
+import { useState } from 'react'
+import { RegisterUser} from '../../services/Auth'
+import { useNavigate} from 'react-router-dom'
 import './register.css'
 
 const Register = () => {
+  let navigate = useNavigate()
 
-  const initialState = {
+  const [formValues, setFormValues] = useState({
     firstName: '',
     lastName: '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
+  })
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const [formState, setFormState] = useState(initialState)
-  
-  const handleChange = e => {
-    setFormState({ ...formState, [e.target.id]: e.target.value})
-  }
-  
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setFormState(initialState)
+    await RegisterUser({
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
+      username: formValues.username,
+      email: formValues.email,
+      password: formValues.password
+    })
+    setFormValues({
+      firstName: '',
+      lastName: '',
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    })
+    navigate('/login')
   }
 
   return (
     <div id="registration">
-      <h1>Become a member</h1>
       <form onSubmit={handleSubmit} id="registrationForm">
-      <label htmlFor="firstName">First Name:</label> 
-        <input
-          id="firstName"
-          type="text"
-          onChange={handleChange}
-          value={formState.firstName}
-        />
-      <label htmlFor="lastName">Last Name:</label>
-        <input
-          id="lastName"
-          type="text"
-          onChange={handleChange}
-          value={formState.lastName}
-        />
-      <label htmlFor="username">Username:</label>
-        <input
-          id="username"
-          type="text"
-          onChange={handleChange}
-          value={formState.username}
-        />
-      <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          type="text"
-          onChange={handleChange}
-          value={formState.email}
-        />
-      <label htmlFor="password">Password:</label>
-        <input
-          id="password"
-          type="text"
-          onChange={handleChange}
-          value={formState.password}
-        />
-
-      <button type="submit">Submit</button>
+          <h1>Become a member</h1>
+          <label htmlFor="firstName">First Name:</label> 
+            <input
+              onChange={handleChange}
+              name="firstName"
+              type="text"
+              value={formValues.firstName}
+              required
+            />
+          <label htmlFor="lastName">Last Name:</label>
+            <input
+              name="lastName"
+              type="text"
+              onChange={handleChange}
+              value={formValues.lastName}
+              required
+            />
+          <label htmlFor="email">Email:</label>
+            <input
+              name="email"
+              type="text"
+              onChange={handleChange}
+              value={formValues.email}
+              required
+            />
+          <label htmlFor="username">Username:</label>
+            <input
+              name="username"
+              type="text"
+              onChange={handleChange}
+              value={formValues.username}
+              required
+            />
+          <label htmlFor="password">Password:</label>
+            <input
+              name="password"
+              type="password"
+              onChange={handleChange}
+              value={formValues.password}
+              required
+            />
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+            <input
+              name="confirmPassword"
+              type="password"
+              onChange={handleChange}
+              value={formValues.confirmPassword}
+              required
+            />
+            <button
+            disabled={
+              !formValues.email ||
+              (!formValues.password &&
+                formValues.confirmPassword === formValues.password)
+              }>Submit</button>
       </form>
     </div>
   )
-
 }
 
 export default Register
