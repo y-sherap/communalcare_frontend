@@ -1,6 +1,6 @@
 // import axios from 'axios'
 // import { useState, useEffect } from 'react'
-import './offercard.css'
+import './homeoffercard.css'
 
 const OfferCard = ({offer, key, id, removeOffer, index}) => {
 
@@ -9,7 +9,7 @@ const OfferCard = ({offer, key, id, removeOffer, index}) => {
       <h2>title: {offer.title}</h2>
       <h4>date: {offer.datePosted}</h4>
       <img src={offer.photo} alt="mountain" />
-      <button onClick={() => removeOffer(offer.id)} id="removeOffer">testing delete offer</button>
+      {/* <button onClick={() => removeOffer(offer.id)} id="removeOffer">testing delete offer</button> */}
     </div>
   )
 }

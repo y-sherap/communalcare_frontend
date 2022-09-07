@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react'
 import { CheckSession } from './services/Auth'
 import axios from 'axios'
 import Home from './pages/Home/Home'
+import Dashboard from './pages/Dashboard/DashboardOffersPage'
 import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
@@ -54,10 +55,11 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={ <Home user={user} authenticated={authenticated}/>} />
+          <Route path="/dashboard" element={ <Dashboard offers={offers} user={user} authenticated={authenticated}/>} />
           <Route path="/login" element={ <Login setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
-          <Route path="/offers" element={ <OffersPage offers={offers} user={user} authenticated={authenticated}/>} />
+          <Route path="/offers" element={ <OffersPage offers={offers}/>} />
           <Route path="/requests" element={ <RequestPage />} />
         </Routes>
       </main>
