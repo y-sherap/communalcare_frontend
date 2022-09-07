@@ -134,38 +134,49 @@ const OfferPage = ( {offers, user, authenticated}) => {
                   />
                 </div>
                 <div>
-                  <input className='offerFromInput'
-                    type="text"
-                    value={category}
-                    onChange={changeCategory}
-                    name={'category'}
-                    placeholder={'category'}
-                    id="createOfferCategory"
-                  />
+                  <select onChange={changeCategory} value={category} >
+                  <option hidden>Category</option>
+                  <option value="antiques">Antiques</option>
+                  <option value="appliances">Appliances</option>
+                  <option value="art">Arts & Crafts</option>
+                  <option value="auto">Auto Parts</option>
+                  <option value="baby">Baby products</option>
+                  <option value="beauty">Health & Beauty</option>
+                  <option value="bicycle">Bicycles & Bicycle Parts</option>
+                  <option value="books">Books & Magazines</option>
+                  <option value="music">CDs, DVDs & VHS</option>
+                  <option value="apparel">Clothing, shoes & accessories</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="furniture">Furniture</option>
+                  <option value="garden">Garden Supplies</option>
+                  <option value="house">Household Supplies</option>
+                  <option value="jewelry">Jewelry</option>
+                  <option value="music">Musical Instruments</option>
+                  <option value="toys">Toys & Games</option>
+                  </select>
+                </div>
+                <div>
+                <select className='offerFromInput' onChange={changeCondition} value={condition} >
+                  <option hidden>Condition</option>
+                  <option value="new">New</option>
+                  <option value="used">Used - like new</option>
+                  <option value="used">Used - good</option>
+                  <option value="used">Used - fair</option>
+                  </select>
+                </div>
+                <div>
+                <select className='offerFromInput' onChange={changeBorough} value={borough} >
+                  <option hidden>Borough</option>
+                  <option value="bronx">The Bronx</option>
+                  <option value="brooklyn">Brooklyn</option>
+                  <option value="manhattan">Manhattan</option>
+                  <option value="queens">Queens</option>
+                  <option value="statenIsland">Staten Island</option>
+                  </select>
                 </div>
                 <div>
                   <input className='offerFromInput'
-                    type="text"
-                    value={condition}
-                    onChange={changeCondition}
-                    name={'condition'}
-                    placeholder={'condition'}
-                    id="createOfferCondition"
-                  />
-                </div>
-                <div>
-                  <input className='offerFromInput'
-                    type="text"
-                    value={borough}
-                    onChange={changeBorough}
-                    name={'borough'}
-                    placeholder={'borough'}
-                    id="createOfferBorough"
-                  />
-                </div>
-                <div>
-                  <input className='offerFromInput'
-                    type="text"
+                    type="number"
                     value={zipcode}
                     onChange={changeZipcode}
                     name={'zipcode'}
@@ -174,8 +185,8 @@ const OfferPage = ( {offers, user, authenticated}) => {
                   />
                 </div>
                 <div>
-                  <input className='offerFromInput'
-                  type="text"
+                  <textarea className='offerFromInput'
+                    type="text"
                     value={description}
                     onChange={changeDescription}
                     name={'description'}
