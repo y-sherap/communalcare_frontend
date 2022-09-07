@@ -1,28 +1,34 @@
-import axios from 'axios'
-import {useState, useEffect} from 'react'
 import OfferCard from '../../components/OfferCard/OfferCard'
+import Client from '../../services/api'
+import { useState} from 'react'
 
-const OfferPage = () => {
-  const [offers, setOffers]  = useState([])
+const OfferPage = ( {offers, user, authenticated}) => {
 
-  useEffect(() => {
-    const getOffers = async () => {
-      const res = await axios.get('http://localhost:3001/offer/get_all')
-      setOffers(res.data)
-    }
-    getOffers()
-  }, [offers])
+  const [userOffers, setUserOffers] = useState([])
 
-  return (
+  const removeOffer = async (id, index) => {
+    await Client.delete(`http://localhost:3001/offer/${id}`)
+    let tempArray = [...userOffers]
+    tempArray.splice(index, 1)
+    setUserOffers(tempArray)
+    window.location.reload(false)
+  }
+
+  return (user, authenticated) ? (
     <div>
       {offers.map((offer, index) => (
-        <div>
-          <OfferCard offer={offer} index={index} />
-        </div>   
+          <OfferCard 
+            offer={offer}
+            index={index}
+            removeOffer={removeOffer}
+          />  
         )
       )}   
     </div>
-  )
+  ) : 
+  <div>
+    <h1>testing ternary</h1>
+  </div>
 }
 
 export default OfferPage

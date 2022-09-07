@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import { CheckSession } from './services/Auth'
+import axios from 'axios'
 import Home from './pages/Home/Home'
 import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login'
@@ -14,6 +15,15 @@ import RequestPage from './pages/RequestsPage/RequestsPage'
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [offers, setOffers]  = useState([])
+
+  useEffect(() => {
+    const getOffers = async () => {
+      const res = await axios.get('http://localhost:3001/offer/get_all')
+      setOffers(res.data)
+    }
+    getOffers()
+  }, [])
 
   const handleLogout = () => {
     setUser(null)
@@ -43,11 +53,11 @@ const App = () => {
         />
       <main>
         <Routes>
-          <Route path="/" element={ <Home />} />
+          <Route path="/" element={ <Home user={user} authenticated={authenticated}/>} />
           <Route path="/login" element={ <Login setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
-          <Route path="/offers" element={ <OffersPage />} />
+          <Route path="/offers" element={ <OffersPage offers={offers} user={user} authenticated={authenticated}/>} />
           <Route path="/requests" element={ <RequestPage />} />
         </Routes>
       </main>
