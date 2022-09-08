@@ -140,30 +140,6 @@ useEffect(() => {
     setRequests(tempRequestArray)
   }
 
-  //   const addRequest = async (e) => {
-  //   await Client.post(`http://localhost:3001/request/${user.id}`, {
-  //     requestDatePosted: requestDatePosted,
-  //     requestTitle: requestTitle,
-  //     requestCategory: requestCategory,
-  //     requestBorough: requestBorough,
-  //     requestZipcode: requestZipcode,
-  //     requestDescription: requestDescription
-  //   })
-  //   setRequestDatePosted ('')
-  //   setRequestTitle ('')
-  //   setRequestCategory ('')
-  //   setRequestBorough ('')
-  //   setRequestZipcode ('')
-  //   setRequestDescription ('')
-  //   let tempRequestArray = [...requests]
-  //   let tempRequestObj = { ...res.data }
-  //   tempRequestArray.push(tempRequestObj)
-  //   setRequests(tempRequestArray)
-  // }
-
-
-
-
 
   const changeRequestDatePosted = (event) => {
     let e = event.target.value
@@ -198,6 +174,14 @@ useEffect(() => {
   const requestHandleSubmit = (e) => {
     e.preventDefault()
     addRequest(e)
+    window.location.reload(false)
+  }
+
+  const removeRequest = async (id, index) => {
+    await Client.delete(`http://localhost:3001/request/${id}`)
+    let tempRequestArray = [...requests]
+    tempRequestArray.splice(index, 1)
+    setRequests(tempRequestArray)
     window.location.reload(false)
   }
 
@@ -412,6 +396,7 @@ useEffect(() => {
             <DashboardRequestCard 
               request={request}
               index={index}
+              removeRequest={removeRequest}
             />  
           )
         )}

@@ -1,6 +1,6 @@
 import './dashboardrequestcard.css'
 
-const DashboardRequestCard = ({request, index}) => {
+const DashboardRequestCard = ({request, index, removeRequest}) => {
 
   return (
     <div id="requestCard">
@@ -10,6 +10,7 @@ const DashboardRequestCard = ({request, index}) => {
       <h4>borough: {request.borough}</h4>
       <h4>zipcode: {request.zipcode}</h4>
       <h4>description: {request.description}</h4>
+      <button onClick={() => removeRequest(request.id)} id="removeRequestButton">testing delete request</button>
     </div>
   )
 }
