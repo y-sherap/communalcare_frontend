@@ -4,7 +4,7 @@ const HomeRequestCard = ({request}) => {
 
   return (
     <div id="requestCard">
-      <h2>title: {request.title}</h2>
+      <h2>title: {request.condition}</h2>
     </div>
   )
 }

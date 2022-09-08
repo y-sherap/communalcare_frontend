@@ -121,12 +121,12 @@ useEffect(() => {
 
   const addRequest = async (e) => {
     const res = await Client.post(`http://localhost:3001/request/${user.id}`, {
-      requestDatePosted: requestDatePosted,
-      requestTitle: requestTitle,
-      requestCategory: requestCategory,
-      requestBorough: requestBorough,
-      requestZipcode: requestZipcode,
-      requestDescription: requestDescription
+      datePosted: requestDatePosted,
+      title: requestTitle,
+      category: requestCategory,
+      borough: requestBorough,
+      zipcode: requestZipcode,
+      description: requestDescription
     })
     setRequestDatePosted ('')
     setRequestTitle ('')
@@ -135,16 +135,35 @@ useEffect(() => {
     setRequestZipcode ('')
     setRequestDescription ('')
     let tempRequestArray = [...requests]
-    let tempObj = { ...res.data }
-    tempRequestArray.push(tempObj)
+    let tempRequestObj = { ...res.data }
+    tempRequestArray.push(tempRequestObj)
     setRequests(tempRequestArray)
   }
 
-   const requestHandleSubmit = (e) => {
-    e.preventDefault()
-    addRequest(e)
-    window.location.reload(false)
-  }
+  //   const addRequest = async (e) => {
+  //   await Client.post(`http://localhost:3001/request/${user.id}`, {
+  //     requestDatePosted: requestDatePosted,
+  //     requestTitle: requestTitle,
+  //     requestCategory: requestCategory,
+  //     requestBorough: requestBorough,
+  //     requestZipcode: requestZipcode,
+  //     requestDescription: requestDescription
+  //   })
+  //   setRequestDatePosted ('')
+  //   setRequestTitle ('')
+  //   setRequestCategory ('')
+  //   setRequestBorough ('')
+  //   setRequestZipcode ('')
+  //   setRequestDescription ('')
+  //   let tempRequestArray = [...requests]
+  //   let tempRequestObj = { ...res.data }
+  //   tempRequestArray.push(tempRequestObj)
+  //   setRequests(tempRequestArray)
+  // }
+
+
+
+
 
   const changeRequestDatePosted = (event) => {
     let e = event.target.value
@@ -176,12 +195,19 @@ useEffect(() => {
     setRequestDescription(e)
   }
 
+  const requestHandleSubmit = (e) => {
+    e.preventDefault()
+    addRequest(e)
+    window.location.reload(false)
+  }
+
   return (user, authenticated) ? (
     <div>
+      <h1>page title placeholder</h1>
       <div id="forms">
         <div className="formContainer">
           <div id = "Form">
-            <h3 id="offerPageTitle">offers</h3>
+            <h3 id="offerPageTitle">offer form</h3>
               <form onSubmit={handleSubmit}>
                 <div className="createOfferForm">
                   <div id = "offerInner">
@@ -361,7 +387,7 @@ useEffect(() => {
                       />
                     </div>
                     <div>
-                    <button id="requestform-submit" >Submit</button>
+                    <button>Submit</button>
                     </div>
                   </div>
                 </div>
