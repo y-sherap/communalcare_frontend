@@ -1,4 +1,4 @@
-#offerCard {
+#requestCard {
   background-color: yellow;
   display: flex;
   flex-direction: column;
@@ -11,14 +11,4 @@
   align-items: center;
   border: 1px solid #151e3d;
   font-size: small;
-}
-
-/* for testing purposes only */
-#offercardImage {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  height: 60%;
 }

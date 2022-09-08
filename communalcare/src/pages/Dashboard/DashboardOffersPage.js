@@ -27,6 +27,7 @@ useEffect(() => {
   const showUserOffers = async () => {
     const res = await Client.get(`http://localhost:3001/offer/${user.id}`)
     setOffers(res.data)
+    console.log(res.data)
   }
   showUserOffers()
 }, [])
@@ -384,7 +385,7 @@ useEffect(() => {
         {offers.map((offer, index) => (
             <DashboardOfferCard 
               offer={offer}
-              index={index}
+              key={index}
               removeOffer={removeOffer}
             />  
           )
@@ -395,7 +396,7 @@ useEffect(() => {
         {requests.map((request, index) => (
             <DashboardRequestCard 
               request={request}
-              index={index}
+              key={index}
               removeRequest={removeRequest}
             />  
           )

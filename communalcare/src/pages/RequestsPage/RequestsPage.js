@@ -7,7 +7,7 @@ const RequestsPage = ( {requests}) => {
         {requests.map((request, index) => (
             <HomeRequestCard 
               request={request}
-              index={index}
+              key={index}
             />  
           )
         )}   

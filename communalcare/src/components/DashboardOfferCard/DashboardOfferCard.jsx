@@ -2,14 +2,14 @@
 // import { useState, useEffect } from 'react'
 import './dashboardoffercard.css'
 
-const DashboardOfferCard = ({offer, key, id, removeOffer, index}) => {
+const DashboardOfferCard = ({offer, removeOffer, index}) => {
 
   return (
-    <div id="offerCard">
+    <div id="offerCard" key={index}>
       <h2>{offer.title}</h2>
       <h4>date: {offer.datePosted}</h4>
       <img src={offer.photo} alt="mountain" />
-      <button onClick={() => removeOffer(offer.id)} id="removeOffer">testing delete offer</button>
+      <button onClick={() => removeOffer(offer.id, index)} id="removeOffer">testing delete offer</button>
     </div>
   )
 }

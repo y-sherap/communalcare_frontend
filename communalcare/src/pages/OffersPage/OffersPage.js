@@ -7,7 +7,7 @@ const OffersPage = ( {offers}) => {
         {offers.map((offer, index) => (
             <HomeOfferCard 
               offer={offer}
-              index={index}
+              key={index}
             />  
           )
         )}   
