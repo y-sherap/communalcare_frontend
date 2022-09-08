@@ -1,4 +1,5 @@
 import DashboardOfferCard from '../../components/DashboardOfferCard/DashboardOfferCard'
+import DashboardRequestCard from '../../components/DashboardRequestCard/DashboardRequestCard'
 import Client from '../../services/api'
 import { useState, useEffect} from 'react'
 
@@ -14,13 +15,23 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   const [zipcode, setZipcode] = useState('')
   const [description, setDescription] = useState('')
 
+  const [requests, setRequests] = useState([])
+
 useEffect(() => {
   const showUserOffers = async () => {
-    const res = await Client.get(`offer/${user.id}`)
+    const res = await Client.get(`http://localhost:3001/offer/${user.id}`)
     setOffers(res.data)
   }
   showUserOffers()
-}, [])
+}, )
+
+useEffect(() => {
+  const showUserRequests = async () => {
+    const res = await Client.get(`http://localhost:3001/request/${user.id}`)
+    setRequests(res.data)
+  }
+  showUserRequests()
+}, )
   
   const addOffer = async (e) => {
     const res = await Client.post(`http://localhost:3001/offer/${user.id}`, {
@@ -105,7 +116,7 @@ useEffect(() => {
     <div>
       <div className="formContainer">
         <div id = "Form">
-        <h3 id="offerPageTitle">offers</h3>
+        <h3 id="offerPageTitle">Your requests and offers</h3>
           <form onSubmit={handleSubmit}>
             <div className="createOfferForm">
               <div id = "offerInner">
@@ -207,6 +218,8 @@ useEffect(() => {
           </form>
         </div>
       </div>
+      <div>
+        <h3>Offers</h3>
         {offers.map((offer, index) => (
             <DashboardOfferCard 
               offer={offer}
@@ -214,7 +227,18 @@ useEffect(() => {
               removeOffer={removeOffer}
             />  
           )
-        )}   
+        )}
+      </div>
+      <div>
+        <h3>Requests</h3>
+        {requests.map((request, index) => (
+            <DashboardRequestCard 
+              request={request}
+              index={index}
+            />  
+          )
+        )}
+      </div>    
     </div>
   ) : 
   <div>
