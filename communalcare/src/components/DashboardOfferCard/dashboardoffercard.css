@@ -11,6 +11,7 @@
   align-items: center;
   border: 1px solid #151e3d;
   font-size: small;
+  cursor:pointer;
 }
 
 /* for testing purposes only */

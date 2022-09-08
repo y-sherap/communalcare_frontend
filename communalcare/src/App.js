@@ -12,6 +12,7 @@ import Register from './pages/Register/Register'
 import MutualAid from './pages/MutualAid/MutualAid'
 import OffersPage from './pages/OffersPage/OffersPage'
 import RequestsPage from './pages/RequestsPage/RequestsPage'
+import DetailsOfferCard from './components/DetailsOfferCard/DetailsOfferCard'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
           <Route path="/offers" element={ <OffersPage offers={offers}/>} />
+          <Route path="/offers/:id" element={ <DetailsOfferCard/> } />
           <Route path="/requests" element={ <RequestsPage requests={requests} />} />
         </Routes>
       </main>
