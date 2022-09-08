@@ -15,4 +15,3 @@ const OfferCard = ({offer, key, id, removeOffer, index}) => {
 }
 
 export default OfferCard
-

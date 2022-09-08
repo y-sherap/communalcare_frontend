@@ -11,12 +11,13 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import MutualAid from './pages/MutualAid/MutualAid'
 import OffersPage from './pages/OffersPage/OffersPage'
-import RequestPage from './pages/RequestsPage/RequestsPage'
+import RequestsPage from './pages/RequestsPage/RequestsPage'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [offers, setOffers]  = useState([])
+  const [requests, setRequests]  = useState([])
 
   useEffect(() => {
     const getOffers = async () => {
@@ -24,6 +25,14 @@ const App = () => {
       setOffers(res.data)
     }
     getOffers()
+  }, [])
+
+  useEffect(() => {
+    const getRequests = async () => {
+      const res = await axios.get('http://localhost:3001/request/get_all')
+      setRequests(res.data)
+    }
+    getRequests()
   }, [])
 
   const handleLogout = () => {
@@ -60,7 +69,7 @@ const App = () => {
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
           <Route path="/offers" element={ <OffersPage offers={offers}/>} />
-          <Route path="/requests" element={ <RequestPage />} />
+          <Route path="/requests" element={ <RequestsPage requests={requests} />} />
         </Routes>
       </main>
     </div>

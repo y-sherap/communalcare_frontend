@@ -1,11 +1,19 @@
-const Request = () => {
+import HomeRequestCard from '../../components/HomeRequestCard/HomeRequestCard'
+
+const RequestsPage = ( {requests}) => {
 
   return (
-    <div>
-      <h1>request</h1>
-    </div>
-  )
-
+      <div>
+        {requests.map((request, index) => (
+            <HomeRequestCard 
+              request={request}
+              index={index}
+            />  
+          )
+        )}   
+    </div> 
+    )
 }
 
-export default Request
+
+export default RequestsPage
