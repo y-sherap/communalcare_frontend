@@ -1,22 +1,21 @@
 #navbar {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  background-color: rgb(108, 231, 20);
+  background-color: rgb(98, 7, 7);
   padding: 1em;
   min-height: 2em;
-  text-decoration: none;
+  display: flex;
 }
 
-#navbarContainer {
+#navbar {
   background-color: red
 }
 
-#navbarContainer a:hover {
+#navbar a:hover {
   font-style: italic;
 } 
 
-#navbarContainer a.active {
+#navbar a.active {
   font-style: italic;
 } 
