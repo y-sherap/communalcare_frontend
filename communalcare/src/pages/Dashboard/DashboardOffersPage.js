@@ -1,10 +1,10 @@
 import DashboardOfferCard from '../../components/DashboardOfferCard/DashboardOfferCard'
 import Client from '../../services/api'
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 
-const DashboardOfferPage = ( {offers, user, authenticated}) => {
+const DashboardOfferPage = ( {user, authenticated}) => {
 
-  const [userOffers, setUserOffers] = useState([])
+  const [offers, setOffers] = useState([])
   const [datePosted, setDatePosted] = useState('')
   const [photo, setPhoto] = useState('')
   const [title, setTitle] = useState('')
@@ -14,6 +14,14 @@ const DashboardOfferPage = ( {offers, user, authenticated}) => {
   const [zipcode, setZipcode] = useState('')
   const [description, setDescription] = useState('')
 
+useEffect(() => {
+  const showUserOffers = async () => {
+    const res = await Client.get(`offer/${user.id}`)
+    setOffers(res.data)
+  }
+  showUserOffers()
+}, [])
+  
   const addOffer = async (e) => {
     const res = await Client.post(`http://localhost:3001/offer/${user.id}`, {
       datePosted: datePosted,
@@ -36,7 +44,7 @@ const DashboardOfferPage = ( {offers, user, authenticated}) => {
     let tempArray = [...offers]
     let tempObj = { ...res.data }
     tempArray.push(tempObj)
-    setUserOffers(tempArray)
+    setOffers(tempArray)
   }
 
    const handleSubmit = (e) => {
@@ -87,9 +95,9 @@ const DashboardOfferPage = ( {offers, user, authenticated}) => {
 
   const removeOffer = async (id, index) => {
     await Client.delete(`http://localhost:3001/offer/${id}`)
-    let tempArray = [...userOffers]
+    let tempArray = [...offers]
     tempArray.splice(index, 1)
-    setUserOffers(tempArray)
+    setOffers(tempArray)
     window.location.reload(false)
   }
 
