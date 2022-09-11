@@ -32,18 +32,28 @@ const Navbar = ({user, authenticated}) => {
     <header>
     <nav>
       <div id="navbar">
-        <div>
-          <Link to="/" id="homeTitle">Home</Link>
+        <div id = "navContainer">
+        <div id="homeTitle">
+          <Link to="/">Home</Link>
         </div>
-        <div>
-          <Link to="/login" id="loginTitle">Login</Link>
-          <Link to="/register" id="registerTitle">Register</Link>
-          <Link to="/nyc-mutual-aid-resources" id="mutualaidTitle">Mutual Aid Resources</Link>
-          <Link to="/offers" id="offersTitle">Offers</Link>
-          <Link to="/requests" id="requestsTitle">Requests</Link>
+        <div id="loginTitle">
+          <Link to="/login">Login</Link>
         </div>
-    </div>
-  </nav>
+        <div id="registerTitle"> 
+          <Link to="/register">Register</Link>
+        </div>
+        <div id="mutualaidTitle"> 
+          <Link to="/nyc-mutual-aid-resources">Mutual Aid Resources</Link>
+        </div> 
+        <div id="offersTitle">
+          <Link to="/offers">Offers</Link>
+        </div>
+        <div id="requestsTitle">
+          <Link to="/requests">Requests</Link>
+        </div>
+        </div>
+      </div>
+    </nav>
   </header>
   )
 }
