@@ -2,7 +2,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>home</h1>
+      <h1>home. add some images, make it pretty</h1>
     </div>
   )
 

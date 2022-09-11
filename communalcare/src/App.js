@@ -13,6 +13,7 @@ import MutualAid from './pages/MutualAid/MutualAid'
 import OffersPage from './pages/OffersPage/OffersPage'
 import RequestsPage from './pages/RequestsPage/RequestsPage'
 import DetailsOfferCard from './components/DetailsOfferCard/DetailsOfferCard'
+import UpdateOffer from './components/UpdateOffer/UpdateOffer'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -20,21 +21,15 @@ const App = () => {
   const [offers, setOffers]  = useState([])
   const [requests, setRequests]  = useState([])
 
-  useEffect(() => {
     const getOffers = async () => {
       const res = await axios.get('http://localhost:3001/offer/get_all')
       setOffers(res.data)
     }
-    getOffers()
-  }, [])
 
-  useEffect(() => {
     const getRequests = async () => {
       const res = await axios.get('http://localhost:3001/request/get_all')
       setRequests(res.data)
     }
-    getRequests()
-  }, [])
 
   const handleLogout = () => {
     setUser(null)
@@ -53,6 +48,8 @@ const App = () => {
     if (token) {
       checkToken()
     }
+    getOffers()
+    getRequests()
   }, [])
 
   return (
@@ -72,6 +69,7 @@ const App = () => {
           <Route path="/offers" element={ <OffersPage offers={offers}/>} />
           <Route path="/offers/:id" element={ <DetailsOfferCard/> } />
           <Route path="/requests" element={ <RequestsPage requests={requests} />} />
+          <Route path="/update-offer/:id" element={ <UpdateOffer requests={requests} />} />
         </Routes>
       </main>
     </div>
