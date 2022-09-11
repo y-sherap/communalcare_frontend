@@ -9,7 +9,6 @@ const Register = () => {
   const [formValues, setFormValues] = useState({
     firstName: '',
     lastName: '',
-    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -24,14 +23,12 @@ const Register = () => {
     await RegisterUser({
       firstName: formValues.firstName,
       lastName: formValues.lastName,
-      username: formValues.username,
       email: formValues.email,
       password: formValues.password
     })
     setFormValues({
       firstName: '',
       lastName: '',
-      username: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -42,7 +39,7 @@ const Register = () => {
   return (
     <div id="registration">
       <form onSubmit={handleSubmit} id="registrationForm">
-          <h1>Become a member</h1>
+          <h1 id="registrationFormTitle">Become a member</h1>
           <label htmlFor="firstName">First Name:</label> 
             <input
               onChange={handleChange}
@@ -50,6 +47,7 @@ const Register = () => {
               type="text"
               value={formValues.firstName}
               required
+              id="registrationField"
             />
           <label htmlFor="lastName">Last Name:</label>
             <input
@@ -58,6 +56,7 @@ const Register = () => {
               onChange={handleChange}
               value={formValues.lastName}
               required
+              id="registrationField"
             />
           <label htmlFor="email">Email:</label>
             <input
@@ -66,14 +65,8 @@ const Register = () => {
               onChange={handleChange}
               value={formValues.email}
               required
-            />
-          <label htmlFor="username">Username:</label>
-            <input
-              name="username"
-              type="text"
-              onChange={handleChange}
-              value={formValues.username}
-              required
+              id="registrationField"
+
             />
           <label htmlFor="password">Password:</label>
             <input
@@ -82,6 +75,7 @@ const Register = () => {
               onChange={handleChange}
               value={formValues.password}
               required
+              id="registrationField"
             />
           <label htmlFor="confirmPassword">Confirm Password:</label>
             <input
@@ -90,13 +84,18 @@ const Register = () => {
               onChange={handleChange}
               value={formValues.confirmPassword}
               required
+              id="registrationField"
             />
             <button
+            id="registrationButton"
             disabled={
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
               }>Submit</button>
+          <div>
+            <p>Already a member? Sign in Here</p>
+          </div>
       </form>
     </div>
   )

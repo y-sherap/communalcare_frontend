@@ -2,7 +2,7 @@ header {
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  width: 20%;
+  width: 10%;
   height: 100%;
   border-right: black solid;
   border-width: thin;

@@ -1,7 +1,26 @@
-#registration {
-  background-color: blue;
+#registrationForm {
+  position: fixed;
+  top: 10%;
+  left: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background-color: grey;
+  padding: 40px;
+  
 }
 
-#registrationForm {
-  background-color: grey;
+#registrationButton,
+input[id="registrationField"] {
+  width : 300px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  display: block;
+}
+
+#registrationFormTitle{
+  /* padding-bottom: 10px; */
+  color: white;
 }
