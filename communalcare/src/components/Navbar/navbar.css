@@ -1,11 +1,16 @@
-#navbar {
+header {
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  width: 10vw;
-  height: 100vh;
+  width: 20%;
+  height: 100%;
   border-right: black solid;
   border-width: thin;
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 #navContainer {
@@ -32,40 +37,48 @@ a:-webkit-any-link {
   font-size: 2em;
   color:blue;
   margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 #dashboardTitle {
   font-size: 1.5em;
   color:blue;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 #mutualaidTitle {
   font-size: 1.5em;
   color:blue;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 #offersTitle {
   font-size: 1.5em;
   color:blue;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 #requestsTitle {
   font-size: 1.5em;
   color:blue;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 #loginTitle {
   font-size: 1.5em;
   color:blue;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 #registerTitle {
   font-size: 1.5em;
   color:blue;
   margin-bottom: 10px;
+  margin-left: 10px;
 }

@@ -1,6 +1,7 @@
 import { SignInUser } from "../../services/Auth"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './login.css'
 
 const Login = ( {setUser, toggleAuthenticated}) => {
   let navigate = useNavigate()
@@ -20,9 +21,9 @@ const Login = ( {setUser, toggleAuthenticated}) => {
   }
 
   return (
-    <div id="login">
-      <form onSubmit={handleSubmit} id="login">
-          <h1>Sign In</h1>
+    <div id="loginPage">
+      <form onSubmit={handleSubmit} id="loginForm">
+          <h1 id="loginFormTitle">Sign In</h1>
           <label htmlFor="email">Email:</label>
             <input
               name="email"
@@ -30,6 +31,8 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               onChange={handleChange}
               value={formValues.email}
               required
+              id="loginField"
+
             />
           <label htmlFor="password">Password:</label>
             <input
@@ -38,8 +41,10 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               onChange={handleChange}
               value={formValues.password}
               required
+              id="loginField"
+
             />
-            <button
+            <button id="loginButton"
             disabled={!formValues.email || !formValues.password}>Submit</button>
       </form>
     </div>
