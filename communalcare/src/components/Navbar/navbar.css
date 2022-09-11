@@ -1,21 +1,71 @@
 #navbar {
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  background-color: rgb(98, 7, 7);
-  padding: 1em;
-  min-height: 2em;
   display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  width: 10vw;
+  height: 100vh;
+  border-right: black solid;
+  border-width: thin;
 }
 
-#navbar {
-  background-color: red
+#navContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Raleway', sans-serif;
 }
 
-#navbar a:hover {
-  font-style: italic;
-} 
+a:-webkit-any-link {
+  text-decoration: none;
+  color:blue;
+}
 
-#navbar a.active {
+#navContainer a:hover {
   font-style: italic;
-} 
+}
+
+#navContainer a.active {
+  font-style: italic;
+}
+
+#homeTitle {
+  font-size: 2em;
+  color:blue;
+  margin-bottom: 20px;
+}
+
+#dashboardTitle {
+  font-size: 1.5em;
+  color:blue;
+  margin-bottom: 10px;
+}
+
+#mutualaidTitle {
+  font-size: 1.5em;
+  color:blue;
+  margin-bottom: 10px;
+}
+
+#offersTitle {
+  font-size: 1.5em;
+  color:blue;
+  margin-bottom: 10px;
+}
+
+#requestsTitle {
+  font-size: 1.5em;
+  color:blue;
+  margin-bottom: 10px;
+}
+
+#loginTitle {
+  font-size: 1.5em;
+  color:blue;
+  margin-bottom: 10px;
+}
+
+#registerTitle {
+  font-size: 1.5em;
+  color:blue;
+  margin-bottom: 10px;
+}
