@@ -10,19 +10,22 @@ const Navbar = ({user, authenticated}) => {
         <div id="navbar">
           <div id="navContainer">
             <div id="homeTitle">
-              <Link to="/">Home</Link>
+              <Link to="/">COMMUNAL CARE</Link>
             </div>
             <div id="dashboardTitle">
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard">dashboard</Link>
             </div>
             <div id="requestsTitle">
-              <Link to="/requests">Requests</Link>  
+              <Link to="/requests">community requests</Link>  
             </div>
             <div id="offersTitle">
-              <Link to="/offers" >Offers</Link>
+              <Link to="/offers" >community resources</Link>
             </div>
             <div id="mutualaidTitle">
-              <Link to="/nyc-mutual-aid-resources" >Mutual Aid Resources</Link>          
+              <Link to="/nyc-mutual-aid-resources" >mutual aid groups</Link>          
+            </div>
+            <div id="navFlowerImg">
+            <img src="https://www.gutenberg.org/files/18913/18913-h/images/img174.jpg" alt="picture" />
             </div>
           </div>
       </div>
@@ -34,22 +37,25 @@ const Navbar = ({user, authenticated}) => {
       <div id="navbar">
         <div id = "navContainer">
         <div id="homeTitle">
-          <Link to="/">Home</Link>
+          <Link to="/">COMMUNAL CARE</Link>
         </div>
         <div id="loginTitle">
-          <Link to="/login">Login</Link>
+          <Link to="/login">login</Link>
         </div>
         <div id="registerTitle"> 
-          <Link to="/register">Register</Link>
+          <Link to="/register">register</Link>
         </div>
-        <div id="mutualaidTitle"> 
-          <Link to="/nyc-mutual-aid-resources">Mutual Aid Resources</Link>
-        </div> 
         <div id="offersTitle">
-          <Link to="/offers">Offers</Link>
+          <Link to="/offers">community resources</Link>
         </div>
         <div id="requestsTitle">
-          <Link to="/requests">Requests</Link>
+          <Link to="/requests">community requests</Link>
+        </div>
+        <div id="mutualaidTitle"> 
+          <Link to="/nyc-mutual-aid-resources">mutual aid groups</Link>
+        </div> 
+        <div id="navFlowerImg">
+            <img src="https://www.gutenberg.org/files/18913/18913-h/images/img174.jpg" alt="picture" />
         </div>
         </div>
       </div>
