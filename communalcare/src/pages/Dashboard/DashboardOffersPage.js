@@ -2,6 +2,7 @@ import DashboardOfferCard from '../../components/DashboardOfferCard/DashboardOff
 import DashboardRequestCard from '../../components/DashboardRequestCard/DashboardRequestCard'
 import Client from '../../services/api'
 import { useState, useEffect} from 'react'
+import './dashboardofferspage.css'
 
 const DashboardOfferPage = ( {user, authenticated}) => {
 
@@ -187,7 +188,7 @@ useEffect(() => {
   }
 
   return (user, authenticated) ? (
-    <div>
+    <div id="dashboardPage">
       <h1>page title placeholder</h1>
       <div id="forms">
         <div className="formContainer">
@@ -380,7 +381,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      <div>
+      <div id="offersList">
         <h1>offers</h1>
         {offers.map((offer, index) => (
             <DashboardOfferCard 

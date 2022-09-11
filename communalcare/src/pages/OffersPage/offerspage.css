@@ -1,0 +1,13 @@
+#offersPage {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+}
+
+#searchBar {
+  top: 20%;
+  left: 40%;
+  /* position: fixed; */
+}

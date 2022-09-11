@@ -1,0 +1,18 @@
+#dashboardPage {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  /* top: 20%; */
+  /* left: 40%; */
+}
+
+
+#offersList {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  height: 300px;
+  /* position: fixed;
+  top: 20%;
+  left: 40%; */
+}
