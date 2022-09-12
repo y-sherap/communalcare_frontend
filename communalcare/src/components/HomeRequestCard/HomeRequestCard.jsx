@@ -3,12 +3,22 @@ import './homerequestcard.css'
 const HomeRequestCard = ({request, index}) => {
 
   return (
-    <div id="requestCard" key={index}>
-      <h2>{request.title}</h2>
-      <h2>Category: {request.category}</h2>
-      <h2>Borough: {request.borough}</h2>
-      <h2>Zipcode: {request.zipcode}</h2>
-      <h2>Description: {request.description}</h2>
+    <div id="homeRequestCard" key={index}>
+      <div id="homeRequestTitle">
+        <p id="homeRequestTitle">{request.title}</p>
+      </div>
+      <div id="homeRequestInnerCard">
+        <p>Category: {request.category}</p>
+     
+      
+        <p>Borough: {request.borough}</p>
+ 
+  
+        <p>Zipcode: {request.zipcode}</p>
+    
+    
+        <p>Description: {request.description}</p>
+      </div>
     </div>
   )
 }

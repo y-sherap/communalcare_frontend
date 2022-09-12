@@ -23,6 +23,8 @@ const RequestsPage = ( ) => {
   getRequests()
   }, [])
 
+  // const requests 
+
   console.log("chart", chart)
 
 const data = {
@@ -37,7 +39,15 @@ const data = {
     'Books & Magazines',
     'CDs, DVDs & VHS',
     'Clothing, shoes & accessories',
-
+    'Electronics',
+    'Furniture',
+    'Garden Supplies',
+    'Household Supplies',
+    'Jewelry',
+    'Kitchen Supplies',
+    'Lighting',
+    'Musical Instruments',
+    'Toys & Games'
   ],
   datasets: [{
       label: 'Count of Requests',
@@ -78,7 +88,6 @@ const options =  {
   }
   }
 
-
   return (
     <div id="requestPage">
     <h1 id="requestPageTitle">Community Requests</h1>
@@ -89,8 +98,7 @@ const options =  {
         height={400}      
       />
     </div> 
-
-          <div id="requestList">
+      <div id="homeRequestList">
         {chart.map((request, index) => (
             <HomeRequestCard 
               request={request}
@@ -98,7 +106,7 @@ const options =  {
             />  
           )
         )}   
-    </div> 
+      </div> 
     </div>
     )
 }

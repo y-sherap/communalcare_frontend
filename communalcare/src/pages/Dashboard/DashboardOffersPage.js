@@ -24,15 +24,12 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   const [requestZipcode, setRequestZipcode] = useState('')
   const [requestDescription, setRequestDescription] = useState('')
 
-useEffect(() => {
   const showUserOffers = async () => {
     const res = await Client.get(`http://localhost:3001/offer/${user.id}`)
     setOffers(res.data)
     console.log(res.data)
   }
-  showUserOffers()
-}, [])
-  
+
   const addOffer = async (e) => {
     const res = await Client.post(`http://localhost:3001/offer/${user.id}`, {
       datePosted: datePosted,
@@ -58,7 +55,7 @@ useEffect(() => {
     setOffers(tempArray)
   }
 
-   const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     addOffer(e)
     window.location.reload(false)
@@ -111,13 +108,15 @@ useEffect(() => {
     setOffers(tempArray)
     window.location.reload(false)
   }
-
-  useEffect(() => {
-    const showUserRequests = async () => {
+  const showUserRequests = async () => {
       const res = await Client.get(`http://localhost:3001/request/${user.id}`)
       setRequests(res.data)
       console.log(res.data)
     }
+
+
+  useEffect(() => {
+    showUserOffers()
     showUserRequests()
   }, [])
 
@@ -249,6 +248,8 @@ useEffect(() => {
                       <option value="garden">Garden Supplies</option>
                       <option value="house">Household Supplies</option>
                       <option value="jewelry">Jewelry</option>
+                      <option value="kitchen">Kitchen Supplies</option>
+                      <option value="lighting">Lighting</option>
                       <option value="music">Musical Instruments</option>
                       <option value="toys">Toys & Games</option>
                       </select>
@@ -345,6 +346,8 @@ useEffect(() => {
                       <option value="garden">Garden Supplies</option>
                       <option value="house">Household Supplies</option>
                       <option value="jewelry">Jewelry</option>
+                      <option value="kitchen">Kitchen Supplies</option>
+                      <option value="lighting">Lighting</option>
                       <option value="music">Musical Instruments</option>
                       <option value="toys">Toys & Games</option>
                       </select>
@@ -403,16 +406,20 @@ useEffect(() => {
           )}
           </div>
       </div>
-      <div>
-      <h1>requests</h1>
-        {requests.map((request, index) => (
-            <DashboardRequestCard 
-              request={request}
-              key={index}
-              removeRequest={removeRequest}
-            />  
-          )
-        )}
+      <div id="dashboardRequestsList">
+        <div id="dashboardRequestsListTitle">
+          <h1>requests</h1>
+        </div>
+        <div id="dashboardRequestCards">
+          {requests.map((request, index) => (
+              <DashboardRequestCard 
+                request={request}
+                key={index}
+                removeRequest={removeRequest}
+              />  
+            )
+          )}
+        </div>
       </div>     
     </div>
   ) : <span></span>

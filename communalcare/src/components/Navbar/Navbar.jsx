@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 
-const Navbar = ({user, authenticated}) => {
+const Navbar = ({ user, authenticated, handleLogOut }) => {
 
   return (user && authenticated) ? (
     <header>
@@ -25,7 +25,9 @@ const Navbar = ({user, authenticated}) => {
               <div id="mutualaidTitle">
                 <Link to="/nyc-mutual-aid-resources" >mutual aid groups</Link>          
               </div>
-          </div>
+              <div id="logout">
+                <Link onClick={handleLogOut} to="/"> log out</Link>              </div>
+              </div>
         </div>
       </div>
     </nav>

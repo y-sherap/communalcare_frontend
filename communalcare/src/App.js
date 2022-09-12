@@ -21,16 +21,6 @@ const App = () => {
   const [offers, setOffers]  = useState([])
   const [requests, setRequests]  = useState([])
 
-    const getOffers = async () => {
-      const res = await axios.get('http://localhost:3001/offer/get_all')
-      setOffers(res.data)
-    }
-
-    const getRequests = async () => {
-      const res = await axios.get('http://localhost:3001/request/get_all')
-      setRequests(res.data)
-    }
-
   const handleLogout = () => {
     setUser(null)
     toggleAuthenticated(false)
@@ -41,6 +31,16 @@ const App = () => {
     const user = await CheckSession()
     setUser(user)
     toggleAuthenticated(true)
+  }
+
+  const getOffers = async () => {
+    const res = await axios.get('http://localhost:3001/offer/get_all')
+    setOffers(res.data)
+  }
+
+  const getRequests = async () => {
+    const res = await axios.get('http://localhost:3001/request/get_all')
+    setRequests(res.data)
   }
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const App = () => {
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
           <Route path="/offers" element={ <OffersPage offers={offers}/>} />
-          <Route path="/offers/:id" element={ <DetailsOfferCard/> } />
+          <Route path="/offers/:id" element={ <DetailsOfferCard offers={offers}/>  } />
           <Route path="/requests" element={ <RequestsPage requests={requests} />} />
           <Route path="/update-offer/:id" element={ <UpdateOffer requests={requests} />} />
         </Routes>

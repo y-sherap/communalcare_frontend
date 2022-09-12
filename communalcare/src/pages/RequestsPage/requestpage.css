@@ -11,14 +11,16 @@
 
 #barChart{
   top: 10%;
-  left: 50%;
+  left: 30%;
   width: 400px;
   height: 400px;
   position: fixed;
   margin-left: 100px;
 }
 
-#requestList{
-  margin-top: 64px;
-  margin-left: 400px;
+#homeRequestList{
+  margin-top: 550px;
+  margin-left: 350px;
+  display: flex;
+  flex-direction: row;
 }

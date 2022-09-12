@@ -3,13 +3,16 @@ import './dashboardrequestcard.css'
 const DashboardRequestCard = ({request, index, removeRequest}) => {
 
   return (
-    <div id="requestCard" key={index}>
-      <h2>title: {request.title}</h2>
-      <h4>date: {request.createdAt}</h4>
-      <h4>category: {request.category}</h4>
-      <h4>borough: {request.borough}</h4>
-      <h4>zipcode: {request.zipcode}</h4>
-      <h4>description: {request.description}</h4>
+    <div id="dashboardRequestCard" key={index}>
+      <div id="dashboardRequestTitle">
+        <p id="dashboardRequestTitle">{request.title}</p>
+      </div>
+      <div id="dashboardRequestInnerCard">
+        <p>Category: {request.category}</p>
+        <p>Borough: {request.borough}</p>
+        <p>Zipcode: {request.zipcode}</p>
+        <p>Description: {request.description}</p>
+      </div>
       <button onClick={() => removeRequest(request.id, index)} id="removeRequestButton">testing delete request</button>
     </div>
   )
