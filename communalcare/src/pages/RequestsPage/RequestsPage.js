@@ -5,6 +5,9 @@ import axios from 'axios'
 import './requestpage.css'
 import HomeRequestCard from '../../components/HomeRequestCard/HomeRequestCard'
 
+const BASE_URL = 'http://localhost:3001'
+
+
 ChartJS.register(
   BarElement,
   CategoryScale,
@@ -16,7 +19,7 @@ const RequestsPage = ( ) => {
 
   useEffect(() => {
     const getRequests = async () => {
-      const res = await axios.get('http://localhost:3001/request/get_all')
+      const res = await axios.get(`${BASE_URL}/request/get_all`)
       setChart(res.data)
       console.log(res.data)
   }

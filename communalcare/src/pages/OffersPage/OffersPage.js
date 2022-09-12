@@ -3,13 +3,16 @@ import './offerspage.css'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
+const BASE_URL = 'http://localhost:3001'
+
+
 const OffersPage = () => {
   const [offers, setOffers]  = useState([])
   const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
     const getOffers = async () => {
-      const res = await axios.get('http://localhost:3001/offer/get_all')
+      const res = await axios.get(`${BASE_URL}/offer/get_all`)
       setOffers(res.data)
     }
     getOffers()
