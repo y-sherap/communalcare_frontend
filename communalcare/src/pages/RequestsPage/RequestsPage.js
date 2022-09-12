@@ -7,7 +7,6 @@ import HomeRequestCard from '../../components/HomeRequestCard/HomeRequestCard'
 
 const BASE_URL = 'http://localhost:3001'
 
-
 ChartJS.register(
   BarElement,
   CategoryScale,

@@ -5,7 +5,6 @@ import axios from 'axios'
 
 const BASE_URL = 'http://localhost:3001'
 
-
 const OffersPage = () => {
   const [offers, setOffers]  = useState([])
   const [searchValue, setSearchValue] = useState('')

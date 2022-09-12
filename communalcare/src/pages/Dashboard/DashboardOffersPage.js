@@ -25,14 +25,16 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   const [requestZipcode, setRequestZipcode] = useState('')
   const [requestDescription, setRequestDescription] = useState('')
 
+  const BASE_URL = 'http://localhost:3001'
+
   const showUserOffers = async () => {
-    const res = await Client.get(`/offer/${user.id}`)
+    const res = await Client.get(`${BASE_URL}/offer/${user.id}`)
     setOffers(res.data)
     console.log(res.data)
   }
 
   const showUserRequests = async () => {
-    const res = await Client.get(`/request/${user.id}`)
+    const res = await Client.get(`${BASE_URL}/request/${user.id}`)
     setRequests(res.data)
     console.log(res.data)
   }
@@ -44,7 +46,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
      [user]) 
 
   const addOffer = async (e) => {
-    const res = await Client.post(`/offer/${user.id}`, {
+    const res = await Client.post(`${BASE_URL}/offer/${user.id}`, {
       datePosted: datePosted,
       photo: photo,
       title: title,
@@ -115,13 +117,13 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   }
 
   const removeOffer = async (id) => {
-    await Client.delete(`/offer/${id}`)
+    await Client.delete(`${BASE_URL}/offer/${id}`)
     showUserOffers()
   }
 
 
   const addRequest = async (e) => {
-    const res = await Client.post(`/request/${user.id}`, {
+    const res = await Client.post(`${BASE_URL}/request/${user.id}`, {
       datePosted: requestDatePosted,
       title: requestTitle,
       category: requestCategory,
@@ -179,7 +181,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   }
 
   const removeRequest = async (id) => {
-    await Client.delete(`/request/${id}`)
+    await Client.delete(`${BASE_URL}/request/${id}`)
     showUserRequests()
   }
 
@@ -402,6 +404,15 @@ const DashboardOfferPage = ( {user, authenticated}) => {
             )
           )}
           </div>
+          {/* <div id="dashboardOfferCards">
+          {offers.map((offer, index) => (
+              <UpdateOffer
+                offer={offer}
+                key={index}
+              />  
+            )
+          )}
+          </div> */}
       </div>
       <div id="dashboardRequestsList">
         <div id="dashboardRequestsListTitle">
