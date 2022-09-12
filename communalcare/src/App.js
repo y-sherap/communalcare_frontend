@@ -1,4 +1,3 @@
-
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import {useState, useEffect} from 'react'
@@ -11,7 +10,7 @@ import Register from './pages/Register/Register'
 import MutualAid from './pages/MutualAid/MutualAid'
 import OffersPage from './pages/OffersPage/OffersPage'
 import RequestsPage from './pages/RequestsPage/RequestsPage'
-import DetailsOfferCard from './components/DetailsOfferCard/DetailsOfferCard'
+// import DetailsOfferCard from './components/DetailsOfferCard/DetailsOfferCard'
 import UpdateOffer from './components/UpdateOffer/UpdateOffer'
 
 const App = () => {
@@ -52,7 +51,7 @@ const App = () => {
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
           <Route path="/offers" element={ <OffersPage />} />
-          <Route path="/get-offer-details/:id" element={ <DetailsOfferCard />  } />
+          {/* <Route path="/get-offer-details/:id" element={ <DetailsOfferCard />  } /> */}
           <Route path="/requests" element={ <RequestsPage />} />
           <Route path="/update-offer/:id" element={ <UpdateOffer />} />
         </Routes>
