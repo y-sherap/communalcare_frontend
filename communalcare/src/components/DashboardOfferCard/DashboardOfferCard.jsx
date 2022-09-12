@@ -9,7 +9,7 @@ const DashboardOfferCard = ({offer, removeOffer, index}) => {
   }
 
   return (
-    <div id="dashboardOfferCard" key={index}>
+    <div id="card" key={index}>
       <h2>{offer.title}</h2>
       <h4>date: {offer.datePosted}</h4>
       <img src={offer.photo} alt="mountain" />

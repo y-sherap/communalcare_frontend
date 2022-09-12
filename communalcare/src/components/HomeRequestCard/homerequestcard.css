@@ -1,3 +1,15 @@
 #requestCard {
-  background-color: yellow;
+  background-color: rgb(171, 171, 155);
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 0.5em;
+  margin: 1em;
+  opacity: .98;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #151e3d;
+  font-size: small;
+  cursor:pointer;
 }

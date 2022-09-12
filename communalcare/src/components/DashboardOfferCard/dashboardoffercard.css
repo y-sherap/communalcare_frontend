@@ -1,9 +1,9 @@
-#offerCard {
+#card {
   background-color: yellow;
   display: flex;
-  flex-direction: column;
-  width: 50vw;
-  height: 50vh;
+  flex-direction: row;
+  width: 30vw;
+  height: 40vh;
   border-radius: 0.5em;
   margin: 1em;
   opacity: .98;

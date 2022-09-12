@@ -1,0 +1,24 @@
+#requestPage{
+  display: flex;
+  flex-direction: column;
+}
+
+#requestPageTitle {
+  top: 0;
+  right: 2%;
+  position: fixed;
+}
+
+#barChart{
+  top: 10%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  margin-left: 100px;
+}
+
+#requestList{
+  margin-top: 64px;
+  margin-left: 400px;
+}
