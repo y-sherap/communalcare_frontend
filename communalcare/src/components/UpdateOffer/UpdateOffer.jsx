@@ -19,7 +19,7 @@ const UpdateOffer = ({ }) => {
   const [formValues, setFormValues] = useState(initialFormState)
 
   const getOffer = async () => {
-    let response = await Client.get(`http://localhost:3001/offer/get-offer/${id}`)
+    let response = await Client.get(`/offer/get-offer/${id}`)
     console.log(id)
     setFormValues(response.data.offers)
   }
@@ -35,7 +35,7 @@ const UpdateOffer = ({ }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await Client.put(`http://localhost:3001/offer/${id}`, formValues)
+    await Client.put(`/offer/${id}`, formValues)
     setFormValues(initialFormState)
     navigate(`/dashboard`)
   }

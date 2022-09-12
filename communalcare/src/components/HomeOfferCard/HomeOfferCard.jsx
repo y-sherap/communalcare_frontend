@@ -22,7 +22,7 @@ const HomeOfferCard = ({ offer, index }) => {
         </div>
 
       {isHovering && (
-      <div>
+      <div id="homeOfferOnHover">
         <div id="homeOfferDesription">
           <p>Description: {offer.description}</p>
         </div>
@@ -45,51 +45,3 @@ const HomeOfferCard = ({ offer, index }) => {
 }
 
 export default HomeOfferCard
-
-
-
-
-
-// import './homeoffercard.css'
-// import {useState} from 'react'
-
-// const HomeOfferCard = ({ offer, index }) => {
-
-//     const [isHovering, setIsHovering] = useState(false)
-
-//   const handleMouseOver = () => {
-//     setIsHovering(true)
-//   }
-
-//   const handleMouseOut = () => {
-//     setIsHovering(false)
-
-//   return (
-//       <div id="offerCard" key={index} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
-//         <div id="homeNotHovering">
-//           <div>
-//             <img id="homeOfferImage" src={offer.photo} alt="mountain" />
-//           </div>
-//           <div id="homeOfferTitleDate">
-//             <div id="homeOfferTitle">
-//               <p>{offer.title}</p>
-//             </div>
-//             <div id="homeOfferDate">
-//               <p>last updated: {offer.updatedAt}</p>
-//             </div>
-//           </div>
-//         {isHovering && (
-//           <p>hi</p>
-//           // <div id="homeOfferCategory">
-//           //   <p>{offer.category}</p>
-//           // </div>
-//           // <div id="homeOfferDate">
-//           //   <p>last updated: {offer.updatedAt}</p>
-//           // </div>
-//         )}
-//       </div>
-//     </div>
-//     )
-// }
-// }
-// export default HomeOfferCard

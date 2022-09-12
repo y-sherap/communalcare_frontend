@@ -25,13 +25,13 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   const [requestDescription, setRequestDescription] = useState('')
 
   const showUserOffers = async () => {
-    const res = await Client.get(`http://localhost:3001/offer/${user.id}`)
+    const res = await Client.get(`/offer/${user.id}`)
     setOffers(res.data)
     console.log(res.data)
   }
 
   const showUserRequests = async () => {
-    const res = await Client.get(`http://localhost:3001/request/${user.id}`)
+    const res = await Client.get(`/request/${user.id}`)
     setRequests(res.data)
     console.log(res.data)
   }
@@ -43,7 +43,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
      [user]) 
 
   const addOffer = async (e) => {
-    const res = await Client.post(`http://localhost:3001/offer/${user.id}`, {
+    const res = await Client.post(`/offer/${user.id}`, {
       datePosted: datePosted,
       photo: photo,
       title: title,
@@ -114,13 +114,13 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   }
 
   const removeOffer = async (id) => {
-    await Client.delete(`http://localhost:3001/offer/${id}`)
+    await Client.delete(`/offer/${id}`)
     showUserOffers()
   }
 
 
   const addRequest = async (e) => {
-    const res = await Client.post(`http://localhost:3001/request/${user.id}`, {
+    const res = await Client.post(`/request/${user.id}`, {
       datePosted: requestDatePosted,
       title: requestTitle,
       category: requestCategory,
@@ -178,7 +178,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   }
 
   const removeRequest = async (id) => {
-    await Client.delete(`http://localhost:3001/request/${id}`)
+    await Client.delete(`/request/${id}`)
     showUserRequests()
   }
 
