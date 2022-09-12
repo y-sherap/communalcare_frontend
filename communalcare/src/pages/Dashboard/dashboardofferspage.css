@@ -25,11 +25,19 @@
   float: right;
 }
 
-#dashboardOffersList {
+/* #dashboardOffersList {
   margin-top: 5px;
   margin-left: 350px;
   display: flex;
   flex-direction: column;
+} */
+
+
+#dashboardOffersList {
+  margin-top: 64px;
+  margin-left: 350px;
+  display: flex;
+  flex-direction: row;
 }
 
 #dashboardOfferCards{

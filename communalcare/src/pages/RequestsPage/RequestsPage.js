@@ -23,7 +23,6 @@ const RequestsPage = ( ) => {
   getRequests()
   }, [])
 
-  // const requests 
 
   console.log("chart", chart)
 

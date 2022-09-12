@@ -1,11 +1,28 @@
+import './detailsoffercard.css'
 
 
-const DetailsOfferCard = () => {
+const DetailsOfferCard = ({ offers }) => {
 
   return (
     <div>
-      <h1>details offer card</h1>
-    </div>
+
+          <div id="detailsOfferCard">
+            <div>
+              {/* <img id="homeOfferImage" src={offer.photo} alt="mountain" /> */}
+            </div>
+            <div>
+              {/* <p>{offer.title}</p> */}
+            </div>
+            <div>
+              
+            </div>
+            <div>
+              
+          </div>
+
+          </div>
+
+      </div> 
   )
 
 }

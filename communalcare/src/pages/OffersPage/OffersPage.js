@@ -1,9 +1,19 @@
 import HomeOfferCard from '../../components/HomeOfferCard/HomeOfferCard'
 import './offerspage.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
-const OffersPage = ( {offers}) => {
+const OffersPage = () => {
+  const [offers, setOffers]  = useState([])
   const [searchValue, setSearchValue] = useState('')
+
+  useEffect(() => {
+    const getOffers = async () => {
+      const res = await axios.get('http://localhost:3001/offer/get_all')
+      setOffers(res.data)
+    }
+    getOffers()
+  }, [])
 
   return (
       <div id="offersPage">

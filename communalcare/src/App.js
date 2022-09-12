@@ -3,7 +3,6 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import { CheckSession } from './services/Auth'
-import axios from 'axios'
 import Home from './pages/Home/Home'
 import Dashboard from './pages/Dashboard/DashboardOffersPage'
 import Navbar from './components/Navbar/Navbar'
@@ -18,38 +17,24 @@ import UpdateOffer from './components/UpdateOffer/UpdateOffer'
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [offers, setOffers]  = useState([])
-  const [requests, setRequests]  = useState([])
 
   const handleLogout = () => {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
   }
-
+  // makes a get request w/ stored token to check it's validity
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
     toggleAuthenticated(true)
   }
-
-  const getOffers = async () => {
-    const res = await axios.get('http://localhost:3001/offer/get_all')
-    setOffers(res.data)
-  }
-
-  const getRequests = async () => {
-    const res = await axios.get('http://localhost:3001/request/get_all')
-    setRequests(res.data)
-  }
-
+  // check if token currently exists
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
-    getOffers()
-    getRequests()
   }, [])
 
   return (
@@ -62,14 +47,14 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={ <Home user={user} authenticated={authenticated}/>} />
-          <Route path="/dashboard" element={ <Dashboard offers={offers} user={user} authenticated={authenticated}/>} />
+          <Route path="/dashboard" element={ <Dashboard user={user} authenticated={authenticated}/>} />
           <Route path="/login" element={ <Login setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
           <Route path="/register" element={ <Register />} />
           <Route path="/nyc-mutual-aid-resources" element={<MutualAid />} />
-          <Route path="/offers" element={ <OffersPage offers={offers}/>} />
-          <Route path="/offers/:id" element={ <DetailsOfferCard offers={offers}/>  } />
-          <Route path="/requests" element={ <RequestsPage requests={requests} />} />
-          <Route path="/update-offer/:id" element={ <UpdateOffer requests={requests} />} />
+          <Route path="/offers" element={ <OffersPage />} />
+          <Route path="/get-offer-details/:id" element={ <DetailsOfferCard />  } />
+          <Route path="/requests" element={ <RequestsPage />} />
+          <Route path="/update-offer/:id" element={ <UpdateOffer />} />
         </Routes>
       </main>
     </div>

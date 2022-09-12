@@ -30,6 +30,18 @@ const DashboardOfferPage = ( {user, authenticated}) => {
     console.log(res.data)
   }
 
+  const showUserRequests = async () => {
+    const res = await Client.get(`http://localhost:3001/request/${user.id}`)
+    setRequests(res.data)
+    console.log(res.data)
+  }
+
+    useEffect(() => {
+        showUserOffers() 
+        showUserRequests()
+    },
+     [user]) 
+
   const addOffer = async (e) => {
     const res = await Client.post(`http://localhost:3001/offer/${user.id}`, {
       datePosted: datePosted,
@@ -101,24 +113,11 @@ const DashboardOfferPage = ( {user, authenticated}) => {
     setDescription(e)
   }
 
-  const removeOffer = async (id, index) => {
+  const removeOffer = async (id) => {
     await Client.delete(`http://localhost:3001/offer/${id}`)
-    let tempArray = [...offers]
-    tempArray.splice(index, 1)
-    setOffers(tempArray)
-    window.location.reload(false)
-  }
-  const showUserRequests = async () => {
-      const res = await Client.get(`http://localhost:3001/request/${user.id}`)
-      setRequests(res.data)
-      console.log(res.data)
-    }
-
-
-  useEffect(() => {
     showUserOffers()
-    showUserRequests()
-  }, [])
+  }
+
 
   const addRequest = async (e) => {
     const res = await Client.post(`http://localhost:3001/request/${user.id}`, {
@@ -178,12 +177,9 @@ const DashboardOfferPage = ( {user, authenticated}) => {
     window.location.reload(false)
   }
 
-  const removeRequest = async (id, index) => {
+  const removeRequest = async (id) => {
     await Client.delete(`http://localhost:3001/request/${id}`)
-    let tempRequestArray = [...requests]
-    tempRequestArray.splice(index, 1)
-    setRequests(tempRequestArray)
-    window.location.reload(false)
+    showUserRequests()
   }
 
   return (user, authenticated) ? (
