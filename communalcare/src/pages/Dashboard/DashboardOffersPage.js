@@ -189,8 +189,10 @@ useEffect(() => {
 
   return (user, authenticated) ? (
     <div id="dashboardPage">
-      <h1>page title placeholder</h1>
-      <div id="forms">
+      <div id="dashboardPageTitle">
+        <p>Dashboard</p>
+      </div>
+      <div id="dashboardPageForms">
         <div className="formContainer">
           <div id = "Form">
             <h3 id="offerPageTitle">offer form</h3>
@@ -204,6 +206,7 @@ useEffect(() => {
                         onChange={changeDatePosted}
                         name={'name'}
                         id="createOfferName"
+                        required
                       />
                     </div>
                     <div>
@@ -214,6 +217,7 @@ useEffect(() => {
                         name={'photo'}
                         placeholder={'Photo'}
                         id="createOfferPhoto"
+                        required
                       />
                     </div>
                     <div>
@@ -224,10 +228,11 @@ useEffect(() => {
                         name={'title'}
                         placeholder={'title'}
                         id="createOfferTitle"
+                        required
                       />
                     </div>
                     <div>
-                      <select onChange={changeCategory} value={category} >
+                      <select onChange={changeCategory} value={category}   required >
                       <option hidden>Category</option>
                       <option value="antiques">Antiques</option>
                       <option value="appliances">Appliances</option>
@@ -249,7 +254,7 @@ useEffect(() => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={changeCondition} value={condition} >
+                    <select className='offerFromInput' onChange={changeCondition}   required value={condition} >
                       <option hidden>Condition</option>
                       <option value="new">New</option>
                       <option value="used">Used - like new</option>
@@ -258,7 +263,7 @@ useEffect(() => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={changeBorough} value={borough} >
+                    <select className='offerFromInput' onChange={changeBorough}   required value={borough} >
                       <option hidden>Borough</option>
                       <option value="bronx">The Bronx</option>
                       <option value="brooklyn">Brooklyn</option>
@@ -275,6 +280,7 @@ useEffect(() => {
                         name={'zipcode'}
                         placeholder={'zipcode'}
                         id="createOfferZipcode"
+                        required
                       />
                     </div>
                     <div>
@@ -285,6 +291,7 @@ useEffect(() => {
                         name={'description'}
                         placeholder={'description'}
                         id="createOfferDescription"
+                        required
                       />
                     </div>
                     <div>
@@ -381,16 +388,20 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      <div id="offersList">
-        <h1>offers</h1>
-        {offers.map((offer, index) => (
-            <DashboardOfferCard 
-              offer={offer}
-              key={index}
-              removeOffer={removeOffer}
-            />  
-          )
-        )}
+      <div id="dashboardOffersList">
+        <div id="dashboardOffersListTitle">
+          <h1>offers</h1>
+        </div>
+        <div id="dashboardOfferCards">
+          {offers.map((offer, index) => (
+              <DashboardOfferCard 
+                offer={offer}
+                key={index}
+                removeOffer={removeOffer}
+              />  
+            )
+          )}
+          </div>
       </div>
       <div>
       <h1>requests</h1>

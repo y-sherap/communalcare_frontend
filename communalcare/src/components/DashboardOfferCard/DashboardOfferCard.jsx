@@ -9,10 +9,16 @@ const DashboardOfferCard = ({offer, removeOffer, index}) => {
   }
 
   return (
-    <div id="card" key={index}>
-      <h2>{offer.title}</h2>
-      <h4>date: {offer.datePosted}</h4>
-      <img src={offer.photo} alt="mountain" />
+    <div id="dashboardOfferCard" key={index}>
+      <div>
+        <img src={offer.photo} id="dashboardOfferCardImage" alt="mountain" />
+      </div>
+      <div id="homeDashboardOfferTitle">
+        <p>{offer.title}</p>
+      </div>
+      <div id="dashboardOfferDate">
+        <p>Last updated: {offer.updatedAt}</p>
+      </div>
       <button onClick={() => removeOffer(offer.id, index)} id="removeOffer">testing delete offer</button>
       <button onClick={goToSingleOfferPage} id="updateOffer">testing update offer</button>
     </div>

@@ -4,9 +4,18 @@ const HomeOfferCard = ({ offer, index, showOfferDetails }) => {
 
   return (
     <div id="offerCard" key={index} onClick={() => showOfferDetails(offer)}>
-      <h2>title: {offer.title}</h2>
-      <h4>date: {offer.createdAt}</h4>
-      <img src={offer.photo} alt="mountain" />
+      <div>
+        <img id="homeOfferImage" src={offer.photo} alt="mountain" />
+      </div>
+      <div id="homeOfferTitleDate">
+        <div id="homeOfferTitle">
+          <p>{offer.title}</p>
+        </div>
+        <div id="homeOfferDate">
+          <p>last updated: {offer.updatedAt}</p>
+        </div>
+      </div>
+
     </div>
   )
 }

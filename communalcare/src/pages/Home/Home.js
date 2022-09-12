@@ -23,6 +23,10 @@ const Home = () => {
       <div>
         <p>Built with the intention of fostering cooperation and solidarity, communalcare allows members to freely share resources and services with their community. This non-transactional relationship is rooted in the practice of building new social relations that transcend mainstream social and economic paradigms.</p>
       </div>
+
+      <div>
+              <img src="https://www.gutenberg.org/files/18913/18913-h/images/img174.jpg" alt="picture" id="homeFlowerImg"/>
+              </div>
       {/* )} */}
     </div>
   )

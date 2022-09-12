@@ -1,25 +1,19 @@
-#card {
-  background-color: yellow;
+#dashboardOfferCard {
   display: flex;
-  flex-direction: row;
-  width: 30vw;
+  flex-direction: column;
+  width: 260px;
   height: 40vh;
   border-radius: 0.5em;
-  margin: 1em;
+  margin-right: 2em;
   opacity: .98;
   justify-content: center;
   align-items: center;
-  border: 1px solid #151e3d;
   font-size: small;
   cursor:pointer;
 }
 
-/* for testing purposes only */
-#offercardImage {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  height: 60%;
+#dashboardOfferCardImage {
+  height: 260px;
+  width: 260px;
+  margin-top:0;
 }

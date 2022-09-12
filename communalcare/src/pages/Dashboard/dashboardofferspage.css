@@ -1,18 +1,35 @@
 #dashboardPage {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  /* top: 20%; */
-  /* left: 40%; */
 }
 
+#dashboardPageTitle{
+  top: 5%;
+  right: 2%;
+  position: fixed;
+}
 
-#offersList {
+#dashboardPageForms{
   display: flex;
   flex-direction: row;
-  width: 200px;
-  height: 300px;
-  /* position: fixed;
+  position: fixed;
   top: 20%;
-  left: 40%; */
+  left: 40%;
+}
+
+#dashboardOffersList {
+  margin-top: 640px;
+  margin-left: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+#dashboardOffersListTitle{
+
+}
+
+#dashboardOfferCards{
+  display: flex;
+  flex-direction: row;
+  
 }

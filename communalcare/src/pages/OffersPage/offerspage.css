@@ -1,13 +1,27 @@
 #offersPage {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 20%;
-  left: 60%;
+}
+
+#offerPageHeader{
+  flex-direction: row;
 }
 
 #searchBar {
-  top: 20%;
-  left: 40%;
-  /* position: fixed; */
+  top: 5%;
+  right: 2%;
+  position: fixed;
+}
+
+#homeOfferList{
+  margin-top: 64px;
+  margin-left: 350px;
+  display: flex;
+  flex-direction: row;
+}
+
+#homeOfferPageTitle{
+  top: 0;
+  right: 2%;
+  position: fixed;
 }
