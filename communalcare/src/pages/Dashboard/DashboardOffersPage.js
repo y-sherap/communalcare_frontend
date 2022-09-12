@@ -1,5 +1,6 @@
 import DashboardOfferCard from '../../components/DashboardOfferCard/DashboardOfferCard'
 import DashboardRequestCard from '../../components/DashboardRequestCard/DashboardRequestCard'
+// import UpdateOffer from '../../components/UpdateOffer/UpdateOffer'
 import Client from '../../services/api'
 import { useState, useEffect} from 'react'
 import './dashboardofferspage.css'
@@ -416,8 +417,17 @@ const DashboardOfferPage = ( {user, authenticated}) => {
             )
           )}
         </div>
+        </div>
+        {/* <div id="dashboardOfferCards">
+          {offers.map((offer, index) => (
+              <UpdateOffer 
+                offer={offer}
+                key={index}
+              />  
+            )
+          )}
+          </div> */}
       </div>     
-    </div>
   ) : <span></span>
 
 }

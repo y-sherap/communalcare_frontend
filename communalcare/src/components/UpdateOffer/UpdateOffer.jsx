@@ -1,13 +1,15 @@
 import Client from '../../services/api'
 import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import './updateOffer.css'
 
-const UpdateOffer = ({ }) => {
+const UpdateOffer = ( { user }) => {
 
   let navigate = useNavigate()
   let { id } = useParams()
-
-  let initialFormState = {
+    
+  const initialState = {
+    datePosted: "",
     photo: "",
     title: "", 
     category: "", 
@@ -16,42 +18,56 @@ const UpdateOffer = ({ }) => {
     zipcode: "", 
     description: ""
   }
-  const [formValues, setFormValues] = useState(initialFormState)
 
+  const [toBeUpdated, setToBeUpdated] = useState(initialState)
+  
   const getOffer = async () => {
     let response = await Client.get(`/offer/get-offer/${id}`)
     console.log(id)
-    setFormValues(response.data.offers)
+    setToBeUpdated(response.data.offer)
   }
 
+
   useEffect(() => {
-    setFormValues(initialFormState)
+    setToBeUpdated(initialState)
     getOffer()
-  }, [])
+  }, [user])
+
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.id]: e.target.value })
+    setToBeUpdated({ ...toBeUpdated, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await Client.put(`/offer/${id}`, formValues)
-    setFormValues(initialFormState)
+    await Client.put(`/offer/${id}`, toBeUpdated)
+    setToBeUpdated(initialState)
     navigate(`/dashboard`)
   }
 
+
   return (
     <div className="editPost">
-      <h1>change heading for form</h1>
       <form onSubmit={handleSubmit}>
 
-                  <div id = "offerInner">
+                  <div id = "offerFormUpdate">
+                  <h1 id="updateOfferFormTitle">form heading. style page and form</h1>
+                    <div>
+                      <input className='offerFromInput'
+                        type="date"
+                        // value={formValues.datePosted}
+                        onChange={handleChange}
+                        name="datePosted"
+                        id="createOfferName"
+                        required
+                      />
+                    </div>
                     <div>
                       <input className='offerFromInput'
                         type="text"
-                        value={formValues.photo}
+                        // value={formValues.photo}
                         onChange={handleChange}
-                        name={'photo'}
+                        name="photo"
                         placeholder={'Photo'}
                         id="createOfferPhoto"
                       />
@@ -59,15 +75,15 @@ const UpdateOffer = ({ }) => {
                     <div>
                       <input className='offerFromInput'
                         type="text"
-                        value={formValues.title}
+                        // value={formValues.title}
                         onChange={handleChange}
-                        name={'title'}
+                        name="title"
                         placeholder={'title'}
                         id="createOfferTitle"
                       />
                     </div>
                     <div>
-                      <select onChange={handleChange} value={formValues.category} >
+                      <select onChange={handleChange}  name="category">
                       <option hidden>Category</option>
                       <option value="antiques">Antiques</option>
                       <option value="appliances">Appliances</option>
@@ -89,7 +105,7 @@ const UpdateOffer = ({ }) => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={handleChange} value={formValues.condition} >
+                    <select className='offerFromInput' onChange={handleChange} name="condition"  >
                       <option hidden>Condition</option>
                       <option value="new">New</option>
                       <option value="used">Used - like new</option>
@@ -98,7 +114,7 @@ const UpdateOffer = ({ }) => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={handleChange} value={formValues.borough} >
+                    <select className='offerFromInput' onChange={handleChange} name="borough"  >
                       <option hidden>Borough</option>
                       <option value="bronx">The Bronx</option>
                       <option value="brooklyn">Brooklyn</option>
@@ -110,9 +126,9 @@ const UpdateOffer = ({ }) => {
                     <div>
                       <input className='offerFromInput'
                         type="number"
-                        value={formValues.zipcode}
+                        // value={formValues.zipcode}
                         onChange={handleChange}
-                        name={'zipcode'}
+                        name="zipcode"
                         placeholder={'zipcode'}
                         id="createOfferZipcode"
                       />
@@ -120,22 +136,21 @@ const UpdateOffer = ({ }) => {
                     <div>
                       <textarea className='offerFromInput'
                         type="text"
-                        value={formValues.description}
+                        // value={formValues.description}
                         onChange={handleChange}
-                        name={'description'}
+                        name="description"
                         placeholder={'description'}
                         id="createOfferDescription"
                       />
                     </div>
                     <div>
-                    <button id="form-submit">Submit</button>
+                    <button id="form-submit">Update</button>
 
                     </div>
     </div>
     </form>
     </div>
   )
-
 }
 
 export default UpdateOffer

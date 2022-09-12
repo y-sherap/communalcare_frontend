@@ -1,0 +1,19 @@
+#offerFormUpdate {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background-color: grey;
+  padding: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* 
+#updateOfferFormTitle{
+  position: fixed;
+  top: 10%;
+  left: 40%;
+} */
