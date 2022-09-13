@@ -1,6 +1,5 @@
 import DashboardOfferCard from '../../components/DashboardOfferCard/DashboardOfferCard'
 import DashboardRequestCard from '../../components/DashboardRequestCard/DashboardRequestCard'
-// import UpdateOffer from '../../components/UpdateOffer/UpdateOffer'
 import Client from '../../services/api'
 import { useState, useEffect} from 'react'
 import './dashboardofferspage.css'
@@ -25,16 +24,15 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   const [requestZipcode, setRequestZipcode] = useState('')
   const [requestDescription, setRequestDescription] = useState('')
 
-  const BASE_URL = 'http://localhost:3001'
 
   const showUserOffers = async () => {
-    const res = await Client.get(`${BASE_URL}/offer/${user.id}`)
+    const res = await Client.get(`/offer/${user.id}`)
     setOffers(res.data)
     console.log(res.data)
   }
 
   const showUserRequests = async () => {
-    const res = await Client.get(`${BASE_URL}/request/${user.id}`)
+    const res = await Client.get(`/request/${user.id}`)
     setRequests(res.data)
     console.log(res.data)
   }
@@ -46,7 +44,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
      [user]) 
 
   const addOffer = async (e) => {
-    const res = await Client.post(`${BASE_URL}/offer/${user.id}`, {
+    const res = await Client.post(`/offer/${user.id}`, {
       datePosted: datePosted,
       photo: photo,
       title: title,
@@ -117,12 +115,12 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   }
 
   const removeOffer = async (id) => {
-    await Client.delete(`${BASE_URL}/offer/${id}`)
+    await Client.delete(`/offer/${id}`)
     showUserOffers()
   }
 
   const addRequest = async (e) => {
-    const res = await Client.post(`${BASE_URL}/request/${user.id}`, {
+    const res = await Client.post(`/request/${user.id}`, {
       datePosted: requestDatePosted,
       title: requestTitle,
       category: requestCategory,
@@ -179,7 +177,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   }
 
   const removeRequest = async (id) => {
-    await Client.delete(`${BASE_URL}/request/${id}`)
+    await Client.delete(`/request/${id}`)
     showUserRequests()
   }
 
@@ -190,9 +188,9 @@ const DashboardOfferPage = ( {user, authenticated}) => {
       </div>
       <div id="dashboardPageForms">
         <div className="formContainer">
-          <div id = "Form">
-            <h3 id="offerPageTitle">offer form</h3>
-              <form onSubmit={handleSubmit}>
+          <div id = "offerForm">
+            <h3 id="formTitle">Offer A Resource</h3>
+              <form onSubmit={handleSubmit} id="createOfferForm">
                 <div className="createOfferForm">
                   <div id = "offerInner">
                     <div>
@@ -201,9 +199,8 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         value={datePosted}
                         onChange={changeDatePosted}
                         name={'name'}
-                        id="createOfferName"
+                        id="createOffer"
                         required
-                        onload="getDate()"
                       />
                     </div>
                     <div>
@@ -213,7 +210,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         onChange={changePhoto}
                         name={'photo'}
                         placeholder={'Photo'}
-                        id="createOfferPhoto"
+                        id="createOffer"
                         required
                       />
                     </div>
@@ -224,12 +221,12 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         onChange={changeTitle}
                         name={'title'}
                         placeholder={'title'}
-                        id="createOfferTitle"
+                        id="createOffer"
                         required
                       />
                     </div>
                     <div>
-                      <select onChange={changeCategory} value={category}   required >
+                      <select onChange={changeCategory} value={category}  id="createOffer" required >
                       <option hidden>Category</option>
                       <option value="antiques">Antiques</option>
                       <option value="appliances">Appliances</option>
@@ -253,7 +250,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={changeCondition}   required value={condition} >
+                    <select className='offerFromInput' onChange={changeCondition} id="createOffer"  required value={condition} >
                       <option hidden>Condition</option>
                       <option value="new">New</option>
                       <option value="used">Used - like new</option>
@@ -262,7 +259,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={changeBorough}   required value={borough} >
+                    <select className='offerFromInput' onChange={changeBorough}  id="createOffer" required value={borough} >
                       <option hidden>Borough</option>
                       <option value="bronx">The Bronx</option>
                       <option value="brooklyn">Brooklyn</option>
@@ -278,12 +275,12 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         onChange={changeZipcode}
                         name={'zipcode'}
                         placeholder={'zipcode'}
-                        id="createOfferZipcode"
+                        id="createOffer"
                         required
                       />
                     </div>
                     <div>
-                      <textarea className='offerFromInput'
+                      <input className='offerFromInput'
                         type="text"
                         value={description}
                         onChange={changeDescription}
@@ -303,8 +300,8 @@ const DashboardOfferPage = ( {user, authenticated}) => {
         </div>
         <div className="formContainer">
           <div id = "RequestForm">
-            <h3 id="requestFormTitle">request form</h3>
-              <form onSubmit={requestHandleSubmit}>
+            <h3 id="formTitle">Offer A Resource</h3>
+              <form onSubmit={requestHandleSubmit} id="createRequest">
                 <div className="createRequestForm">
                   <div id = "requestInner">
                     <div>
@@ -313,7 +310,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         value={requestDatePosted}
                         onChange={changeRequestDatePosted}
                         name={'name'}
-                        id="createRequestDate"
+                        id="createRequest"
                       />
                     </div>
                     <div>
@@ -323,11 +320,11 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         onChange={changeRequestTitle}
                         name={'requestTitle'}
                         placeholder={'Title'}
-                        id="createRequestTitle"
+                        id="createRequest"
                       />
                     </div>
                     <div>
-                      <select onChange={changeRequestCategory} value={requestCategory} >
+                      <select onChange={changeRequestCategory} id="createRequest" value={requestCategory} >
                       <option hidden>Category</option>
                       <option value="antiques">Antiques</option>
                       <option value="appliances">Appliances</option>
@@ -351,7 +348,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                       </select>
                     </div>
                     <div>
-                    <select className='requestFormInput' onChange={changeRequestBorough} value={requestBorough} >
+                    <select className='requestFormInput' id="createRequest" onChange={changeRequestBorough} value={requestBorough} >
                       <option hidden>Borough</option>
                       <option value="bronx">The Bronx</option>
                       <option value="brooklyn">Brooklyn</option>
@@ -367,21 +364,21 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         onChange={changeRequestZipcode}
                         name={'requestZipcode'}
                         placeholder={'zipcode'}
-                        id="createRequestZipcode"
+                        id="createRequest"
                       />
                     </div>
                     <div>
-                      <textarea className='requestFormInput'
+                      <input className='requestFormInput'
                         type="text"
                         value={requestDescription}
                         onChange={changeRequestDescription}
                         name={'requestDescription'}
                         placeholder={'description'}
-                        id="RequestDescription"
+                        id="createOfferDescription"
                       />
                     </div>
                     <div>
-                    <button>Submit</button>
+                    <button id="form-submit" disabled={!title}>Submit</button>
                     </div>
                   </div>
                 </div>
@@ -403,15 +400,6 @@ const DashboardOfferPage = ( {user, authenticated}) => {
             )
           )}
           </div>
-          {/* <div id="dashboardOfferCards">
-          {offers.map((offer, index) => (
-              <UpdateOffer
-                offer={offer}
-                key={index}
-              />  
-            )
-          )}
-          </div> */}
       </div>
       <div id="dashboardRequestsList">
         <div id="dashboardRequestsListTitle">
@@ -428,15 +416,6 @@ const DashboardOfferPage = ( {user, authenticated}) => {
           )}
         </div>
         </div>
-        {/* <div id="dashboardOfferCards">
-          {offers.map((offer, index) => (
-              <UpdateOffer 
-                offer={offer}
-                key={index}
-              />  
-            )
-          )}
-          </div> */}
       </div>     
   ) : <span></span>
 

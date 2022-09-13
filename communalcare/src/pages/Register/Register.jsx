@@ -39,7 +39,7 @@ const Register = () => {
   return (
     <div id="registration">
       <form onSubmit={handleSubmit} id="signUpRegisterForm">
-          <h1 id="registrationFormTitle">Become a member</h1>
+          <h1 id="registrationFormTitle">Become a member. STYLE STYLE STYLE</h1>
           
           <div id="registrationName">
             <div id="firstName">

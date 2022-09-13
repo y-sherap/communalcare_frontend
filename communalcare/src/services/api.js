@@ -1,5 +1,5 @@
 import Axios from 'axios'
-export const BASE_URL = 'http://localhost:3001'
+export const BASE_URL = 'https://communalcare.herokuapp.com'
 
 // 'https://communalcare.herokuapp.com/'
 

@@ -14,7 +14,7 @@
 }
 
 #loginButton,
-input[id="loginField"] {
+input[class="loginField"] {
   width : 500px;
   padding: 10px;
   margin-bottom: 30px;
@@ -51,4 +51,11 @@ margin-bottom: 3px;
 #signin{
   margin-left: 10px;
   border-width: thin;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
+/* 
+#alreadyMember{
+
+} */

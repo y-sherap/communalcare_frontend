@@ -25,6 +25,74 @@
   float: right;
 }
 
+#createOfferForm{
+margin-bottom: 30px;
+}
+
+#offerForm{
+  margin-top: 50px;
+}
+
+#form-submit,
+input[id="createOffer"],
+select[id="createOffer"]{
+  width : 200px;
+  padding: 4px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  left: 20%;
+  box-sizing: border-box;
+  display: block;
+}
+
+#formTitle{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+input[id="createOfferDescription"]{
+  width : 200px;
+  height: 60px;
+  padding: 4px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  left: 20%;
+  box-sizing: border-box;
+  display: block;
+}
+
+#form-submit,
+input[id="createRequest"],
+select[id="createRequest"]{
+  width : 200px;
+  padding: 4px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  left: 20%;
+  box-sizing: border-box;
+  display: block;
+}
+
+input[id="createOfferDescription"]{
+  width : 200px;
+  height: 60px;
+  padding: 4px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  left: 20%;
+  box-sizing: border-box;
+  display: block;
+}
+
+
+
+
+
+
+
+
 /* #dashboardOffersList {
   margin-top: 5px;
   margin-left: 350px;

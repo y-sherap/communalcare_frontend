@@ -19,8 +19,10 @@ const DashboardOfferCard = ({offer, removeOffer, index}) => {
       <div id="dashboardOfferDate">
         <p>Last updated: {offer.updatedAt}</p>
       </div>
-      <button onClick={() => removeOffer(offer.id, index)} id="removeOffer">testing delete offer</button>
-      <button onClick={goToSingleOfferPage} id="updateOffer" offer={offer}>testing update offer</button>
+      <div id="buttonsOfferCard">
+        <button onClick={() => removeOffer(offer.id, index)} id="removeOffer">Delete Offer</button>
+        <button onClick={goToSingleOfferPage} id="updateOffer" offer={offer}>Update Offer</button>
+      </div>
     </div>
   )
 }

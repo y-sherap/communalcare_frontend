@@ -17,3 +17,8 @@
   width: 260px;
   margin-top:0;
 }
+
+#buttonsOfferCard{
+  flex-direction: row;
+  display: flex;
+}

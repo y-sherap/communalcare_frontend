@@ -32,7 +32,7 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               onChange={handleChange}
               value={formValues.email}
               required
-              id="loginField"
+              class="loginField"
             />
           <label htmlFor="password" id="passwordTitle">Password:</label>
             <input
@@ -41,7 +41,7 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               onChange={handleChange}
               value={formValues.password}
               required
-              id="loginField"
+              class="loginField"
             />
             <button id="loginButton"
             disabled={!formValues.email || !formValues.password}>Submit</button>
@@ -49,8 +49,8 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               <div id="alreadyMember">
                 <p>Already a member?</p>
               </div>
-              <div>
-                <Link to="/register" id="signin">Sign In</Link>
+              <div id="signin">
+                <Link to="/register">Sign In</Link>
               </div>
             </div>
       </form>

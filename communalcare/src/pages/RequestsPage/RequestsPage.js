@@ -5,8 +5,6 @@ import axios from 'axios'
 import './requestpage.css'
 import HomeRequestCard from '../../components/HomeRequestCard/HomeRequestCard'
 
-const BASE_URL = 'http://localhost:3001'
-
 ChartJS.register(
   BarElement,
   CategoryScale,
@@ -18,9 +16,8 @@ const RequestsPage = ( ) => {
 
   useEffect(() => {
     const getRequests = async () => {
-      const res = await axios.get(`${BASE_URL}/request/get_all`)
+      const res = await axios.get(`https://communalcare.herokuapp.com/request/get_all`)
       setChart(res.data)
-      console.log(res.data)
   }
   getRequests()
   }, [])
@@ -51,8 +48,8 @@ const data = {
     'Toys & Games'
   ],
   datasets: [{
-      label: 'Count of Requests',
-      data: chart?.requests?.map(x => x.category),
+      label: 'count',
+      data: chart.index?.map(x => x.borough),
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -73,21 +70,16 @@ const data = {
   }]
 }
 
-const options =  {
+const options = {
   maintainAspectRatio: false,
   scales: {
-    yAxes: [{
-      ticks: {
-        stepSize: 1
-      }
-    }]
   },
   legend: {
     labels: {
-      fontSize: 20
-    }
-  }
-  }
+      fontSize: 25,
+    },
+  },
+}
 
   return (
     <div id="requestPage">

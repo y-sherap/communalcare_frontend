@@ -17,10 +17,10 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
                 <Link to="/dashboard">DASHBOARD</Link>
               </div>
               <div id="requestsTitle">
-                <Link to="/requests">COMMUNITY RESOURCES</Link>  
+                <Link to="/offers">COMMUNITY RESOURCES</Link>  
               </div>
               <div id="offersTitle">
-                <Link to="/offers" >COMMUNITY REQUESTS</Link>
+                <Link to="/requests" >COMMUNITY REQUESTS</Link>
               </div>
               <div id="mutualaidTitle">
                 <Link to="/nyc-mutual-aid-resources" >MUTUAL AID GROUPS</Link>          
