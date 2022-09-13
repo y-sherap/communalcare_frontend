@@ -27,3 +27,15 @@ input[id="registrationField"] {
   /* padding-bottom: 10px; */
   color: white;
 }
+
+#registrationName{
+  display: flex;
+  flex-direction: row;
+}
+
+input[id="firstName"] {
+  width : 200px;
+}
+input[id="lastName"] {
+  width: 200px;
+}

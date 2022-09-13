@@ -38,26 +38,41 @@ const Register = () => {
 
   return (
     <div id="registration">
-      <form onSubmit={handleSubmit} id="registrationForm">
+      <form onSubmit={handleSubmit} id="signUpRegisterForm">
           <h1 id="registrationFormTitle">Become a member</h1>
-          <label htmlFor="firstName">First Name:</label> 
-            <input
-              onChange={handleChange}
-              name="firstName"
-              type="text"
-              value={formValues.firstName}
-              required
-              id="registrationField"
-            />
-          <label htmlFor="lastName">Last Name:</label>
-            <input
-              name="lastName"
-              type="text"
-              onChange={handleChange}
-              value={formValues.lastName}
-              required
-              id="registrationField"
-            />
+          
+          <div id="registrationName">
+            <div id="firstName">
+              <div>
+                <div>
+                  <label htmlFor="firstName">First Name:</label> 
+                </div>
+                <div>
+                  <input
+                    onChange={handleChange}
+                    name="firstName"
+                    type="text"
+                    value={formValues.firstName}
+                    required
+                    id="firstName"
+                  />
+                  </div>
+              </div>
+            </div>
+            <div id="lastName">
+              <label htmlFor="lastName">Last Name:</label>
+                <input
+                  name="lastName"
+                  type="text"
+                  onChange={handleChange}
+                  value={formValues.lastName}
+                  required
+                  id="lastName"
+                />
+            </div>
+          </div>
+
+
           <label htmlFor="email">Email:</label>
             <input
               name="email"
