@@ -121,7 +121,6 @@ const DashboardOfferPage = ( {user, authenticated}) => {
     showUserOffers()
   }
 
-
   const addRequest = async (e) => {
     const res = await Client.post(`${BASE_URL}/request/${user.id}`, {
       datePosted: requestDatePosted,
@@ -142,7 +141,6 @@ const DashboardOfferPage = ( {user, authenticated}) => {
     tempRequestArray.push(tempRequestObj)
     setRequests(tempRequestArray)
   }
-
 
   const changeRequestDatePosted = (event) => {
     let e = event.target.value
@@ -205,6 +203,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                         name={'name'}
                         id="createOfferName"
                         required
+                        onload="getDate()"
                       />
                     </div>
                     <div>

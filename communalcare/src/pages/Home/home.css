@@ -1,4 +1,4 @@
-#homeContainer {
+/* #homeContainer {
   position: fixed;
   top: 20%;
   left: 38%;
@@ -9,9 +9,23 @@
   color: white;
   background-color: rgb(139, 225, 99);
   padding: 40px;
+} */
+
+#homePageGif{
+  width: 600px;
+  height: 400px;
+  position: fixed;
+  top: 18%;
+  left: 40%;
 }
 
-#homeFlowerImg{
-  width: 100px;
-  height: 100px;
+#homePageText{
+  width: 595px;
+  height: 400px;
+  position: fixed;
+  top: 60%;
+  left: 40%;
+  text-align: justify;
+  text-justify: inter-word;
+
 }

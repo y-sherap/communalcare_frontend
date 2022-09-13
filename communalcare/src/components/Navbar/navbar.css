@@ -47,6 +47,11 @@ a:-webkit-any-link {
   border-width: thin;
 }
 
+#navLinks{
+  text-align: left;
+
+}
+
 #dashboardTitle {
   font-size: 1.5em;
   color:blue;
@@ -57,42 +62,42 @@ a:-webkit-any-link {
 #mutualaidTitle {
   font-size: 1.5em;
   color:blue;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-left: 10px;
 }
 
 #offersTitle {
   font-size: 1.5em;
   color:blue;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-left: 10px;
 }
 
 #requestsTitle {
   font-size: 1.5em;
   color:blue;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-left: 10px;
 }
 
 #loginTitle {
   font-size: 1.5em;
   color:blue;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-left: 10px;
 }
 
 #registerTitle {
   font-size: 1.5em;
   color:blue;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-left: 10px;
 }
 
 #logout{
   font-size: 1.5em;
   color:blue;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-left: 10px;
 }
 

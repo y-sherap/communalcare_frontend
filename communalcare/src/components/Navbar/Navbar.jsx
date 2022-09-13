@@ -28,6 +28,11 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
               <div id="logout">
                 <Link onClick={handleLogout} to="/"> log out</Link>              
               </div> 
+              <div id="navFlowerImg">
+
+
+                {/* <img src="https://c.tenor.com/4A4UHbVtBIIAAAAC/globe-world.gif" alt="picture" /> */}
+            </div>
             </div>
         </div>
       </div>
@@ -39,11 +44,11 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
       <div id="navbar">
         <div id = "navContainer">
           <div id="homeTitle">
-            <Link to="/">COMMUNAL CARE</Link>
+            <Link to="/">COMMUNAL CARE  </Link>
           </div>
           <div id="navLinks">
             <div id="loginTitle">
-              <Link to="/login">login</Link>
+              <Link to="/login"> login</Link>
             </div>
             <div id="registerTitle"> 
               <Link to="/register">register</Link>
@@ -57,9 +62,9 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
             <div id="mutualaidTitle"> 
               <Link to="/nyc-mutual-aid-resources">mutual aid groups</Link>
             </div> 
-            {/* <div id="navFlowerImg">
-                <img src="https://www.gutenberg.org/files/18913/18913-h/images/img174.jpg" alt="picture" />
-            </div> */}
+            <div id="navFlowerImg">
+                {/* <img src="https://www.gutenberg.org/files/18913/18913-h/images/img174.jpg" alt="picture" /> */}
+            </div>
           </div>
         </div>
       </div>
