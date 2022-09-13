@@ -21,7 +21,7 @@ const OffersPage = () => {
       <div id="offersPage">
         <div id="offerPageHeader">
           <div id="searchBar">
-            <input type="text" placeholder="search" onChange={event => {setSearchValue(event.target.value)}}/>
+            <input id="searchInput" type="text" placeholder="search" onChange={event => {setSearchValue(event.target.value)}}/>
           </div>
           <div id="homeOfferPageTitle">
             <p>Available Community Resources</p>

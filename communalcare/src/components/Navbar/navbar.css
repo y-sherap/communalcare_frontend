@@ -34,6 +34,8 @@ a:-webkit-any-link {
 
 #navContainer a:hover {
   font-style: italic;
+  color: rgb(10,75,186);
+
 }
 
 #navContainer a.active {

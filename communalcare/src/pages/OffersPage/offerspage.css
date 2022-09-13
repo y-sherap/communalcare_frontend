@@ -13,8 +13,18 @@
   position: fixed;
 }
 
+input[id="searchInput"]{
+  width : 200px;
+  padding: 5px;
+  margin-bottom: 30px;
+  left: 20%;
+  box-sizing: border-box;
+  display: block;
+  border-radius: .5em;
+}
+
 #homeOfferList{
-  margin-top: 64px;
+  margin-top: 120px;
   margin-left: 350px;
   display: flex;
   flex-direction: row;
@@ -24,4 +34,19 @@
   top: 0;
   right: 2%;
   position: fixed;
+  color: rgb(146, 146, 174);
+}
+
+#offerPageHeader{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(10,75,186);
+  width: 100%;
+  height: 10.08%;
+  border-bottom: black solid;
+  border-width: thin;
+  margin: 0;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
 }
