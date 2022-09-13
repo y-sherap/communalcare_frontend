@@ -14,24 +14,21 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
             </div>
             <div id="navLinks">
               <div id="dashboardTitle">
-                <Link to="/dashboard">dashboard</Link>
+                <Link to="/dashboard">DASHBOARD</Link>
               </div>
               <div id="requestsTitle">
-                <Link to="/requests">community requests</Link>  
+                <Link to="/requests">COMMUNITY RESOURCES</Link>  
               </div>
               <div id="offersTitle">
-                <Link to="/offers" >community resources</Link>
+                <Link to="/offers" >COMMUNITY REQUESTS</Link>
               </div>
               <div id="mutualaidTitle">
-                <Link to="/nyc-mutual-aid-resources" >mutual aid groups</Link>          
+                <Link to="/nyc-mutual-aid-resources" >MUTUAL AID GROUPS</Link>          
               </div>
               <div id="logout">
-                <Link onClick={handleLogout} to="/"> log out</Link>              
+                <Link onClick={handleLogout} to="/"> LOG OUT</Link>              
               </div> 
               <div id="navFlowerImg">
-
-
-                {/* <img src="https://c.tenor.com/4A4UHbVtBIIAAAAC/globe-world.gif" alt="picture" /> */}
             </div>
             </div>
         </div>
@@ -48,23 +45,20 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
           </div>
           <div id="navLinks">
             <div id="loginTitle">
-              <Link to="/login"> login</Link>
+              <Link to="/login"> LOGIN</Link>
             </div>
             <div id="registerTitle"> 
-              <Link to="/register">register</Link>
+              <Link to="/register">REGISTER</Link>
             </div>
             <div id="offersTitle">
-              <Link to="/offers">community resources</Link>
+              <Link to="/offers">COMMUNITY RESOURCES</Link>
             </div>
             <div id="requestsTitle">
-              <Link to="/requests">community requests</Link>
+              <Link to="/requests">COMMUNITY REQUESTS</Link>
             </div>
             <div id="mutualaidTitle"> 
-              <Link to="/nyc-mutual-aid-resources">mutual aid groups</Link>
+              <Link to="/nyc-mutual-aid-resources">MUTUAL AID GROUPS</Link>
             </div> 
-            <div id="navFlowerImg">
-                {/* <img src="https://www.gutenberg.org/files/18913/18913-h/images/img174.jpg" alt="picture" /> */}
-            </div>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { SignInUser } from "../../services/Auth"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './login.css'
+import { Link } from 'react-router-dom'
 
 const Login = ( {setUser, toggleAuthenticated}) => {
   let navigate = useNavigate()
@@ -17,14 +18,14 @@ const Login = ( {setUser, toggleAuthenticated}) => {
     setFormValues({ email: '', password: '' })
     setUser(payload)
     toggleAuthenticated(true)
-    navigate('/offers')
+    navigate('/dashboard')
   }
 
   return (
     <div id="loginPage">
       <form onSubmit={handleSubmit} id="loginForm">
           <h1 id="loginFormTitle">Sign In</h1>
-          <label htmlFor="email">Email:</label>
+          <label id="emailTitle" htmlFor="email">Email:</label>
             <input
               name="email"
               type="text"
@@ -32,9 +33,8 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               value={formValues.email}
               required
               id="loginField"
-
             />
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password" id="passwordTitle">Password:</label>
             <input
               name="password"
               type="password"
@@ -42,10 +42,17 @@ const Login = ( {setUser, toggleAuthenticated}) => {
               value={formValues.password}
               required
               id="loginField"
-
             />
             <button id="loginButton"
             disabled={!formValues.email || !formValues.password}>Submit</button>
+            <div id="navigateToRegisterPage">
+              <div id="alreadyMember">
+                <p>Already a member?</p>
+              </div>
+              <div>
+                <Link to="/register" id="signin">Sign In</Link>
+              </div>
+            </div>
       </form>
     </div>
   )

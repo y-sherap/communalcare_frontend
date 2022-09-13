@@ -1,16 +1,3 @@
-/* #homeContainer {
-  position: fixed;
-  top: 20%;
-  left: 38%;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  background-color: rgb(139, 225, 99);
-  padding: 40px;
-} */
-
 #homePageGif{
   width: 600px;
   height: 400px;
@@ -27,5 +14,8 @@
   left: 40%;
   text-align: justify;
   text-justify: inter-word;
-
+  font-family: 'Raleway', sans-serif;
+  color: rgb(146, 146, 174);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;1,200&display=swap');

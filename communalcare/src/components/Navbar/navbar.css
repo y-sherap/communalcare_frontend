@@ -1,8 +1,8 @@
 header {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255, 255, 255);
-  width: 15%;
+  background-color: rgb(238, 243, 246);
+  width: 10.5%;
   height: 100%;
   border-right: black solid;
   border-width: thin;
@@ -22,11 +22,14 @@ header {
 
 #navLinks{
   margin-left: 20px;
+  font-size: 1.4em;
+  margin-top: 10px;
+
 }
 
 a:-webkit-any-link {
   text-decoration: none;
-  color:blue;
+  color:rgb(181, 181, 208);
 }
 
 #navContainer a:hover {
@@ -39,72 +42,48 @@ a:-webkit-any-link {
 
 #homeTitle {
   font-size: 1.8em;
-  color:blue;
-  margin-bottom: 20px;
+  color:rgb(181, 181, 208);
+  margin-bottom: 2px;
   margin-top: 20px;
-  margin-left: 10px;
-  border-bottom: 15% black solid;
+  margin-left: 16px;
+  border-bottom: black solid;
   border-width: thin;
-}
-
-#navLinks{
-  text-align: left;
-
+  padding-bottom: 10px;
+  font-weight: bold;
 }
 
 #dashboardTitle {
-  font-size: 1.5em;
-  color:blue;
   margin-bottom: 10px;
   margin-left: 10px;
 }
 
 #mutualaidTitle {
-  font-size: 1.5em;
-  color:blue;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-left: 10px;
 }
 
 #offersTitle {
-  font-size: 1.5em;
-  color:blue;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-left: 10px;
 }
 
 #requestsTitle {
-  font-size: 1.5em;
-  color:blue;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-left: 10px;
 }
 
 #loginTitle {
-  font-size: 1.5em;
-  color:blue;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-left: 10px;
 }
 
 #registerTitle {
-  font-size: 1.5em;
-  color:blue;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-left: 10px;
 }
 
 #logout{
-  font-size: 1.5em;
-  color:blue;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-left: 10px;
 }
 
-/* #navFlowerImg {
-  position: bottom;
-  width: 100px;
-  height: 100px;
-  margin-left: 10px;
-  margin-top: 300px;
-} */

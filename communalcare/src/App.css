@@ -1,4 +1,8 @@
 html{
   font-family: 'Raleway', sans-serif;
-  background-color: rgb(238, 245, 246)
+  /* background-color: rgb(247, 249, 240) */
+  background-color: rgb(238, 243, 246)
+
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;1,200&display=swap');
