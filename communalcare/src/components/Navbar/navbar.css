@@ -1,10 +1,10 @@
 header {
   display: flex;
   flex-direction: column;
-  background-color: rgb(238, 243, 246);
-  width: 10.5%;
+  background-color: rgb(255, 255, 255);
+  width: 15%;
   height: 100%;
-  border-right: black solid;
+  border-right: rgb(253, 252, 252) solid;
   border-width: thin;
   margin: 0;
   position: fixed;
@@ -29,12 +29,14 @@ header {
 
 a:-webkit-any-link {
   text-decoration: none;
-  color:rgb(181, 181, 208);
+  color: rgb(10,75,186);
+
+  /* color:rgb(181, 181, 208); */
 }
 
 #navContainer a:hover {
   font-style: italic;
-  color: rgb(10,75,186);
+  color:rgb(181, 181, 208);
 
 }
 

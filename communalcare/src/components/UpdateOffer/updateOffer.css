@@ -1,15 +1,75 @@
-#offerFormUpdate {
+#updateForm {
   position: fixed;
-  top: 20%;
+  top: 18%;
   left: 40%;
+  width: 600px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
-  background-color: grey;
-  padding: 40px;
+  background-color: rgb(10,75,186);
+  /* padding: 40px; */
   font-family: 'Raleway', sans-serif;
 }
+
+#updateFormButton,
+input[id="updateOffer"],
+select[id="updateOffer"] {
+  width : 500px;
+  padding: 5px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  /* left: 20%; */
+  box-sizing: border-box;
+  display: block;
+}
+
+input[id="updateOfferDescriptionForm"]{
+  width : 500px;
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  /* left: 20%; */
+  box-sizing: border-box;
+  display: block;
+}
+
+#loginFormTitle{
+  color: white;
+  position:fixed;
+  top:18%;
+  margin-left: 50px;
+}
+
+#emailTitle{
+margin-left: 50px;
+margin-top: 70px;
+margin-bottom: 3px;
+}
+
+#passwordTitle{
+  margin-left: 50px;
+  margin-bottom: px;
+}
+
+#navigateToRegisterPage{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+#signin{
+  margin-left: 10px;
+  border-width: thin;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 
+#alreadyMember{
+
+} */
 
 /* 
 #updateOfferFormTitle{

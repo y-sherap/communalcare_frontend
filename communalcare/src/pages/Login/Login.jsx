@@ -24,7 +24,9 @@ const Login = ( {setUser, toggleAuthenticated}) => {
   return (
     <div id="loginPage">
       <form onSubmit={handleSubmit} id="signUpRegisterForm">
-          <h1 id="loginFormTitle">Sign In</h1>
+          <div id="loginFormTitle">
+            <h1>Sign In</h1>
+          </div>          
           <label id="emailTitle" htmlFor="email">Email:</label>
             <input
               name="email"

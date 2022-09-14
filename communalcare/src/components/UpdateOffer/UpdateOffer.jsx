@@ -48,7 +48,7 @@ const UpdateOffer = ( { user }) => {
 
   return (
     <div className="editPost">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="updateForm">
 
                   <div id = "offerFormUpdate">
                   <h1 id="updateOfferFormTitle">form heading. style page and form</h1>
@@ -58,7 +58,7 @@ const UpdateOffer = ( { user }) => {
                         // value={formValues.datePosted}
                         onChange={handleChange}
                         name="datePosted"
-                        id="createOfferName"
+                        id="updateOffer"
                         required
                       />
                     </div>
@@ -69,7 +69,7 @@ const UpdateOffer = ( { user }) => {
                         onChange={handleChange}
                         name="photo"
                         placeholder={'Photo'}
-                        id="createOfferPhoto"
+                        id="updateOffer"
                       />
                     </div>
                     <div>
@@ -79,11 +79,11 @@ const UpdateOffer = ( { user }) => {
                         onChange={handleChange}
                         name="title"
                         placeholder={'title'}
-                        id="createOfferTitle"
+                        id="updateOffer"
                       />
                     </div>
                     <div>
-                      <select onChange={handleChange}  name="category">
+                      <select onChange={handleChange}  name="category" id="updateOffer">
                       <option hidden>Category</option>
                       <option value="antiques">Antiques</option>
                       <option value="appliances">Appliances</option>
@@ -105,7 +105,7 @@ const UpdateOffer = ( { user }) => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={handleChange} name="condition"  >
+                    <select className='offerFromInput' onChange={handleChange} name="condition"  id="updateOffer" >
                       <option hidden>Condition</option>
                       <option value="new">New</option>
                       <option value="used">Used - like new</option>
@@ -114,7 +114,7 @@ const UpdateOffer = ( { user }) => {
                       </select>
                     </div>
                     <div>
-                    <select className='offerFromInput' onChange={handleChange} name="borough"  >
+                    <select className='offerFromInput' onChange={handleChange} name="borough" id="updateOffer"  >
                       <option hidden>Borough</option>
                       <option value="bronx">The Bronx</option>
                       <option value="brooklyn">Brooklyn</option>
@@ -130,21 +130,21 @@ const UpdateOffer = ( { user }) => {
                         onChange={handleChange}
                         name="zipcode"
                         placeholder={'zipcode'}
-                        id="createOfferZipcode"
+                        id="updateOffer"
                       />
                     </div>
                     <div>
-                      <textarea className='offerFromInput'
+                      <input className='offerFromInput'
                         type="text"
                         // value={formValues.description}
                         onChange={handleChange}
                         name="description"
                         placeholder={'description'}
-                        id="createOfferDescription"
+                        id="updateOfferDescriptionForm"
                       />
                     </div>
                     <div>
-                    <button id="form-submit">Update</button>
+                    <button id="updateFormButton">Update</button>
 
                     </div>
     </div>

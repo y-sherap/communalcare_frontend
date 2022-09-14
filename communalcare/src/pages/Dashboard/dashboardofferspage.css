@@ -4,7 +4,7 @@
 }
 
 #dashboardPageTitle{
-  top: 5%;
+  top: 2%;
   right: 2%;
   position: fixed;
 }
@@ -15,7 +15,7 @@
   background-color: rgb(255, 255, 255);
   width: 15%;
   height: 100%;
-  border-right: black solid;
+  border-left: rgb(253, 252, 252) solid;
   border-width: thin;
   margin: 0;
   position: fixed;
@@ -101,17 +101,17 @@ input[id="createOfferDescription"]{
 } */
 
 
-#dashboardOffersList {
+/* #dashboardOffersList {
   margin-top: 64px;
   margin-left: 350px;
   display: flex;
   flex-direction: row;
-}
+} */
 
-#dashboardOfferCards{
+/* #dashboardOfferCards{
   display: flex;
   flex-direction: row;
-}
+} */
 
 #dashboardRequestsList {
   margin-top: 100px;

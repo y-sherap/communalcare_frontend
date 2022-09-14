@@ -300,7 +300,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
         </div>
         <div className="formContainer">
           <div id = "RequestForm">
-            <h3 id="formTitle">Offer A Resource</h3>
+            <h3 id="formTitle">Request a Resource</h3>
               <form onSubmit={requestHandleSubmit} id="createRequest">
                 <div className="createRequestForm">
                   <div id = "requestInner">

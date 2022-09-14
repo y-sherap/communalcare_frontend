@@ -1,6 +1,6 @@
 #signUpRegisterForm {
   position: fixed;
-  top: 18%;
+  top: 15%;
   left: 40%;
   width: 600px;
   height: 400px;
@@ -9,7 +9,6 @@
   justify-content: center;
   color: white;
   background-color: rgb(10,75,186);
-  /* padding: 40px; */
   font-family: 'Raleway', sans-serif;
 }
 
@@ -25,15 +24,16 @@ input[class="loginField"] {
 }
 
 #loginFormTitle{
-  color: white;
+  color: rgb(199, 26, 26);
   position:fixed;
-  top:18%;
+  top:14%;
   margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 #emailTitle{
 margin-left: 50px;
-margin-top: 70px;
+margin-top: 200px;
 margin-bottom: 3px;
 }
 
@@ -54,6 +54,7 @@ margin-bottom: 3px;
   display:flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 /* 
 #alreadyMember{
