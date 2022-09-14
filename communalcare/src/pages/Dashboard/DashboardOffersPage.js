@@ -184,12 +184,12 @@ const DashboardOfferPage = ( {user, authenticated}) => {
   return (user, authenticated) ? (
     <div id="dashboardPage">
       <div id="dashboardPageTitle">
-        <p>Dashboard</p>
+        {/* <p>Dashboard</p> */}
       </div>
       <div id="dashboardPageForms">
         <div className="formContainer">
           <div id = "offerForm">
-            <h3 id="formTitle">Offer A Resource</h3>
+            <h3 id="formTitle">Offer a Resource</h3>
               <form onSubmit={handleSubmit} id="createOfferForm">
                 <div className="createOfferForm">
                   <div id = "offerInner">
@@ -378,7 +378,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
                       />
                     </div>
                     <div>
-                    <button id="form-submit" disabled={!title}>Submit</button>
+                    <button id="form-submit" disabled={!requestTitle}>Submit</button>
                     </div>
                   </div>
                 </div>
@@ -388,7 +388,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
       </div>
       <div id="dashboardOffersList">
         <div id="dashboardOffersListTitle">
-          <h1>offers</h1>
+          <h1>YOUR OFFERS</h1>
         </div>
         <div id="dashboardOfferCards">
           {offers.map((offer, index) => (
@@ -403,7 +403,7 @@ const DashboardOfferPage = ( {user, authenticated}) => {
       </div>
       <div id="dashboardRequestsList">
         <div id="dashboardRequestsListTitle">
-          <h1>requests</h1>
+          <h1>YOUR REQUESTS</h1>
         </div>
         <div id="dashboardRequestCards">
           {requests.map((request, index) => (

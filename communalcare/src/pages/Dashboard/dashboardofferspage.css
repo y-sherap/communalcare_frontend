@@ -1,13 +1,44 @@
 #dashboardPage {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-#dashboardPageTitle{
-  top: 2%;
-  right: 2%;
-  position: fixed;
+#dashboardOffersList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+} 
+
+#dashboardOfferCards{
+  margin-left: 500px;
+  margin-right: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+#dashboardRequestsListTitle, #dashboardOffersListTitle {
+  font-size: .7em;
+}
+
+#dashboardRequestsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dashboardRequestCards{
+  margin-left: 500px;
+  margin-right: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+/* Forms */
 
 #dashboardPageForms{
   display: flex;
@@ -36,7 +67,7 @@ margin-bottom: 30px;
 #form-submit,
 input[id="createOffer"],
 select[id="createOffer"]{
-  width : 200px;
+  width: 200px;
   padding: 4px;
   margin-bottom: 10px;
   margin-left: 50px;
@@ -84,43 +115,4 @@ input[id="createOfferDescription"]{
   left: 20%;
   box-sizing: border-box;
   display: block;
-}
-
-
-
-
-
-
-
-
-/* #dashboardOffersList {
-  margin-top: 5px;
-  margin-left: 350px;
-  display: flex;
-  flex-direction: column;
-} */
-
-
-/* #dashboardOffersList {
-  margin-top: 64px;
-  margin-left: 350px;
-  display: flex;
-  flex-direction: row;
-} */
-
-/* #dashboardOfferCards{
-  display: flex;
-  flex-direction: row;
-} */
-
-#dashboardRequestsList {
-  margin-top: 100px;
-  margin-left: 350px;
-  display: flex;
-  flex-direction: column;
-}
-
-#dashboardRequestCards{
-  display: flex;
-  flex-direction: row;
 }

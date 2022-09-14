@@ -13,7 +13,7 @@ const DashboardOfferCard = ({offer, removeOffer, index}) => {
       <div>
         <img src={offer.photo} id="dashboardOfferCardImage" alt="mountain" />
       </div>
-      <div id="homeDashboardOfferTitle">
+      <div id="dashboardOfferTitle">
         <p>{offer.title}</p>
       </div>
       <div id="dashboardOfferDate">

@@ -1,12 +1,12 @@
 #offersPage {
   display: flex;
-  flex-direction: column;
-  left: 288px;
-  /* position: fixed; */
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
 }
 
 #searchBar {
-  top: 8%;
+  top: 6.5%;
   right: 37.5%;
   position: fixed;
 }
@@ -38,6 +38,7 @@ input[id="searchInput"]{
   color: rgb(146, 146, 174);
 }
 
+/* rightheader */
 #offerPageHeader{
   display: flex;
   flex-direction: column;
