@@ -1,6 +1,6 @@
 
 # communal care
-#### 09/01/2022
+#### 09/01/2022 - 09/14/2022
 #### yangtsel sherap
 
 **[production website](LINK HERE) | [backend repo](https://github.com/y-sherap/communalcare) | [trello](https://trello.com/invite/b/Sm4ThAvO/7c9596bd5ad7858fbdfc4015dc7560dd/communal-care) |  [linkedin](https://www.linkedin.com/in/ysherap/)**
@@ -35,18 +35,18 @@ Built with the intention of fostering cooperation and solidarity, communalcare a
 
 ##### *entity relationship diagram*
 
-![ERD](public/erd_communalcare.png)
+![ERD](communalcare/public/erd_communalcare.png)
 
 
 ##### *component hierarchy diagram*
 
-![CHD](public/chd_communalcare.png)
+![CHD](communalcare/public/chd_communalcare.png)
 
 
 ---
 
 #### *future updates*
-- [ ] dynamic map that shows existing mutual aid groups across nyc
+- [x] dynamic map that shows existing mutual aid groups across nyc
 - [ ] dynamic chart that shows requested resources overtime
 - [ ] in-app messaging system that allows users to message each other
 ---
@@ -56,3 +56,4 @@ Built with the intention of fostering cooperation and solidarity, communalcare a
 - Draw.io
 - Heroku
 - Miro
+- [ChartJs](https://www.chartjs.org/docs/latest/)
