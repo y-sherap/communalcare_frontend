@@ -22,15 +22,7 @@
 
 #buttonsOfferCard{
   flex-direction: row;
-  /* width: 200px; */
-  background-color:rgb(10,75,186); /* Green */
-  /* border: none;
-  color: white;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px; */
+  background-color:rgb(10,75,186); 
 }
 
 #removeOffer{

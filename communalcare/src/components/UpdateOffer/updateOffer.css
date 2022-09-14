@@ -59,25 +59,6 @@ margin-bottom: 3px;
   margin-left: 50px;
 }
 
-#signin{
-  margin-left: 10px;
-  border-width: thin;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-/* 
-#alreadyMember{
-
-} */
-
-/* 
-#updateOfferFormTitle{
-  position: fixed;
-  top: 10%;
-  left: 40%;
-} */
-
 #updateOfferFormTitle{
   margin-left: 10px;
 }

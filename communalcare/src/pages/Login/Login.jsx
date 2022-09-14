@@ -50,10 +50,10 @@ const Login = ( {setUser, toggleAuthenticated}) => {
             disabled={!formValues.email || !formValues.password}>Submit</button>
             <div id="navigateToRegisterPage">
               <div id="alreadyMember">
-                <p>Already a member?</p>
+                <p>Not yet a member?</p>
               </div>
               <div id="signin">
-                <Link to="/register">Sign In</Link>
+                <Link to="/register">Sign Up</Link>
               </div>
             </div>
       </form>

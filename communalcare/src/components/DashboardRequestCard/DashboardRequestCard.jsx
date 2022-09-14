@@ -13,7 +13,9 @@ const DashboardRequestCard = ({request, index, removeRequest}) => {
         <p>Zipcode: {request.zipcode}</p>
         <p>Description: {request.description}</p>
       </div>
+      <div id="buttondashboardrequest">
       <button onClick={() => removeRequest(request.id, index)} id="removeRequestButton">Delete Request</button>
+      </div>
     </div>
   )
 }
