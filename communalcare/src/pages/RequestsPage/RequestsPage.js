@@ -83,6 +83,7 @@ const options = {
 
   return (
     <div id="requestPage">
+    <div id="rightHeader"><span></span></div>
     <h1 id="requestPageTitle">Community Requests</h1>
     <div id="barChart">
       <Bar 

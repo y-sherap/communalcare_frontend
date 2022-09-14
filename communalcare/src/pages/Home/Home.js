@@ -4,6 +4,8 @@ const Home = () => {
 
   return (
     <div id="homePage">
+      <div id="rightHeader"><span></span></div>
+
       <div id="homePageText">
         <p>Built with the intention of fostering cooperation and solidarity, communalcare allows members to freely share resources and services with their community. This non-transactional relationship is rooted in the practice of building new social relations that transcend mainstream social and economic paradigms.</p>
       </div>

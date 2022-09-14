@@ -57,7 +57,7 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
               <Link to="/requests">COMMUNITY REQUESTS</Link>
             </div>
             <div id="mutualaidTitle"> 
-              <Link to="/nyc-mutual-aid-resources">MUTUAL AID GROUPS</Link>
+              <Link to="/nyc-mutual-aid-resources"> FRIENDLY FRIDGES</Link>
             </div> 
           </div>
         </div>

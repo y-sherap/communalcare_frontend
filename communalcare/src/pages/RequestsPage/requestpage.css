@@ -1,26 +1,28 @@
 #requestPage{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #requestPageTitle {
-  top: 0;
-  right: 2%;
-  position: fixed;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-bottom: 50px;
 }
 
 #barChart{
-  top: 10%;
-  left: 30%;
   width: 400px;
   height: 400px;
-  position: fixed;
-  margin-left: 100px;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-bottom: 50px;
 }
 
 #homeRequestList{
-  margin-top: 550px;
-  margin-left: 350px;
+  margin-left: 500px;
+  margin-right: 500px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }

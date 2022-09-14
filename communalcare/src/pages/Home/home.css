@@ -1,21 +1,21 @@
-#homePage{
+/* #homePage{
   background-image: url("https://www.oxbowschool.org/assets/news/blog/2020/4/time-based-drawing-with-light-and-shadow/_large_16_9/Screen-Shot-2020-04-13-at-10.17.45-AM.png");
-}
+} */
 
 #homePageGif{
+  top: 20%;
+  left: 34%;
   width: 600px;
   height: 400px;
   position: fixed;
-  top: 15%;
-  left: 40%;
 }
 
 #homePageText{
-  width: 595px;
+  width: 600px;
   height: 400px;
   position: fixed;
-  top: 58%;
-  left: 40%;
+  top: 62%;
+  left: 34%;
   text-align: justify;
   text-justify: inter-word;
   font-family: 'Raleway', sans-serif;
