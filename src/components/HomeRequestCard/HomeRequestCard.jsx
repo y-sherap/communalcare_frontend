@@ -18,6 +18,8 @@ const HomeRequestCard = ({request, index}) => {
     
     
         <p>Description: {request.description}</p>
+
+        <p>Last Updated: {request.updatedAt}</p>
       </div>
     </div>
   )
