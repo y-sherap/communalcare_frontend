@@ -48,7 +48,7 @@ const data = {
     'Toys & Games'
   ],
   datasets: [{
-      label: 'count',
+      label: [1,2,3,4],
       data: chart.index?.map(x => x.borough),
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
