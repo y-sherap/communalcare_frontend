@@ -17,7 +17,7 @@ const OffersPage = () => {
 
   return (
       <div id="offersPage">
-        <div id="offerPageHeader">
+        <div id="rightHeader">
           <div id="searchBar">
             <input id="searchInput" type="text" placeholder="🔍︎" onChange={event => {setSearchValue(event.target.value)}}/>
           </div>

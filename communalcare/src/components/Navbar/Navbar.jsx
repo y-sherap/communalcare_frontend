@@ -23,7 +23,7 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
                 <Link to="/requests" >COMMUNITY REQUESTS</Link>
               </div>
               <div id="mutualaidTitle">
-                <Link to="/nyc-mutual-aid-resources" >MUTUAL AID GROUPS</Link>          
+              <Link to="/nyc-mutual-aid-resources"> FRIENDLY FRIDGES</Link>
               </div>
               <div id="logout">
                 <Link onClick={handleLogout} to="/"> LOG OUT</Link>              
@@ -47,9 +47,9 @@ const Navbar = ({ user, authenticated, handleLogout }) => {
             <div id="loginTitle">
               <Link to="/login"> LOGIN</Link>
             </div>
-            <div id="registerTitle"> 
+            {/* <div id="registerTitle"> 
               <Link to="/register">REGISTER</Link>
-            </div>
+            </div> */}
             <div id="offersTitle">
               <Link to="/offers">COMMUNITY RESOURCES</Link>
             </div>

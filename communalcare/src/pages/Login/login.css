@@ -23,11 +23,11 @@ input[class="loginField"] {
   display: block;
 }
 
-#loginFormTitle{
+/* #loginFormTitle{
   color: rgb(199, 26, 26);
   margin-bottom: 40px;
   margin-left: 50px;
-}
+} */
 
 #emailTitleLogin{
 margin-left: 50px;
@@ -58,7 +58,7 @@ margin-bottom: 3px;
 #rightHeader{
   display: flex;
   flex-direction: column;
-  background-color: rgb(255, 255, 255);
+  border-left: rgb(253, 252, 252) solid;
   width: 15%;
   height: 100%;
   border-left: rgb(253, 252, 252) solid;

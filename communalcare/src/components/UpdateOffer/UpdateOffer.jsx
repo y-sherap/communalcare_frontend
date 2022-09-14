@@ -51,7 +51,7 @@ const UpdateOffer = ( { user }) => {
       <form onSubmit={handleSubmit} id="updateForm">
 
                   <div id = "offerFormUpdate">
-                  <h1 id="updateOfferFormTitle">form heading. style page and form</h1>
+                  <h1 id="updateOfferFormTitle">Update Offer</h1>
                     <div>
                       <input className='offerFromInput'
                         type="date"
