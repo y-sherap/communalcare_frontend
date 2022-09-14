@@ -38,8 +38,9 @@ const Register = () => {
 
   return (
     <div id="registration">
+         <div id="rightHeader"><span></span></div>
       <form onSubmit={handleSubmit} id="signUpRegisterForm">
-          <h1 id="registrationFormTitle">Become a member. STYLE STYLE STYLE</h1>
+          <h1 id="registrationFormTitle">Become a Member</h1>
           
           <div id="registrationName">
             <div id="firstName">
@@ -54,7 +55,7 @@ const Register = () => {
                     type="text"
                     value={formValues.firstName}
                     required
-                    id="firstName"
+                    id="firstNameField"
                   />
                   </div>
               </div>
@@ -67,13 +68,11 @@ const Register = () => {
                   onChange={handleChange}
                   value={formValues.lastName}
                   required
-                  id="lastName"
+                  id="lastNameField"
                 />
             </div>
           </div>
-
-
-          <label htmlFor="email">Email:</label>
+          <label id="email" htmlFor="email">Email:</label>
             <input
               name="email"
               type="text"
@@ -81,9 +80,9 @@ const Register = () => {
               value={formValues.email}
               required
               id="registrationField"
-
             />
-          <label htmlFor="password">Password:</label>
+
+          <label htmlFor="password" id="password">Password:</label>
             <input
               name="password"
               type="password"
@@ -92,7 +91,7 @@ const Register = () => {
               required
               id="registrationField"
             />
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <label htmlFor="confirmPassword" id="confirmPassword">Confirm Password:</label>
             <input
               name="confirmPassword"
               type="password"
@@ -108,8 +107,8 @@ const Register = () => {
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
               }>Submit</button>
-          <div>
-            <p>Already a member? Sign in Here</p>
+          <div id="bottomText">
+            {/* <p>Already a member? Sign in Here</p> */}
           </div>
       </form>
     </div>

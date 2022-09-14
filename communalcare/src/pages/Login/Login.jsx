@@ -23,11 +23,12 @@ const Login = ( {setUser, toggleAuthenticated}) => {
 
   return (
     <div id="loginPage">
+      <div id="rightHeader"><span></span></div>
       <form onSubmit={handleSubmit} id="signUpRegisterForm">
           <div id="loginFormTitle">
             <h1>Sign In</h1>
           </div>          
-          <label id="emailTitle" htmlFor="email">Email:</label>
+          <label id="emailTitleLogin" htmlFor="email">Email:</label>
             <input
               name="email"
               type="text"
