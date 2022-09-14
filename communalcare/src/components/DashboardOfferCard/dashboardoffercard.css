@@ -22,16 +22,23 @@
 
 #buttonsOfferCard{
   flex-direction: row;
-  background-color:rgb(10,75,186); 
+  background-color: #919ed3; 
+  border: black;
 }
 
 #removeOffer{
   width: 110px;
   margin-right:40px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 
 }
 
 
 #updateOffer{
   width: 110px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }

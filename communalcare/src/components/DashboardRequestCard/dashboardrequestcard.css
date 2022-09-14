@@ -8,7 +8,10 @@
   margin-bottom: 3em;
   opacity: .98;
   font-size: small;
-  border:2px solid grey;
+  color: white;
+  background-color: rgb(134, 170, 176);
+  box-shadow: inset 2px 0px 100px #919ed3, inset -2px -2px 2px #cbcdd3;
+
 }
 
 #dashboardRequestTitle, #dashboardOfferTitle{
@@ -23,6 +26,9 @@
 
 #removeRequestButton{
   width: 110px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
 
 #buttondashboardrequest{
